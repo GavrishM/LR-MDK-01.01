@@ -27,6 +27,7 @@ namespace test_array
             Console.WriteLine(tekst2[1]);
             Console.WriteLine(tekst2[2]);
             int[] ints = new int[10000];
+            foreach (int i in ints) ints[i] = i + 1;
 
         }
     }
