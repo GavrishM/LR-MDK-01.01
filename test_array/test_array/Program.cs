@@ -11,6 +11,12 @@ namespace test_array
         static void Main(string[] args)
         {
 
+            string[] tekst1 = new string[3];
+            tekst1[0] = "тут был текст";
+            tekst1[1] = "хомяк";
+            tekst1[2] = "rat";
+
+
         }
     }
 }
