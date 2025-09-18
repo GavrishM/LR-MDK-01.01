@@ -16,6 +16,9 @@ namespace test_array
             tekst1[1] = "хомяк";
             tekst1[2] = "rat";
             tekst1[1] = "тут был хомяк";
+            Console.WriteLine(tekst1[0]);
+            Console.WriteLine(tekst1[1]);
+            Console.WriteLine(tekst1[2]);
 
         }
     }
