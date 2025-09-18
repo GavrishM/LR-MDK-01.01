@@ -19,7 +19,7 @@ namespace test_array
             Console.WriteLine(tekst1[0]);
             Console.WriteLine(tekst1[1]);
             Console.WriteLine(tekst1[2]);
-
+            string[] tekst2 = new string[3];
         }
     }
 }
