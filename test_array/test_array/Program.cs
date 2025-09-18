@@ -20,12 +20,13 @@ namespace test_array
             Console.WriteLine(tekst1[1]);
             Console.WriteLine(tekst1[2]);
             string[] tekst2 = new string[3];
-            tekst2[0] = "rat";
-            tekst2[1] = "тут был хомяк";
-            tekst2[2] = "тут был текст";
+            tekst2[0] = tekst1[2];
+            tekst2[1] = tekst1[1];
+            tekst2[2] = tekst1[0];
             Console.WriteLine(tekst2[0]);
             Console.WriteLine(tekst2[1]);
             Console.WriteLine(tekst2[2]);
+
         }
     }
 }
