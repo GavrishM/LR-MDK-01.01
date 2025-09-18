@@ -10,7 +10,7 @@ namespace test_array
     {
         static void Main(string[] args)
         {
-
+            
             string[] tekst1 = new string[3];
             tekst1[0] = "тут был текст";
             tekst1[1] = "хомяк";
@@ -24,22 +24,30 @@ namespace test_array
             tekst2[1] = tekst1[1];
             tekst2[2] = tekst1[0];
             Console.WriteLine(tekst2[0]);
-            Console.WriteLine(tekst2[1]);                    //
-            Console.WriteLine(tekst2[2]);                   //
-            int[] ints = new int[10000];                   //
-            for (int i = 0; i < 10000; i++)               //
-            {                                            //
-                ints[i] = (i + 1)*2;                    //\\    //\\    //\\    //\\    //\\    //\\
-            }                                          //  \\  //  \\  //  \\  //  \\  //  \\  //  \\
-                                                      //    \\//    \\//    \\//    \\//    \\//    \\
-            
+            Console.WriteLine(tekst2[1]);                    
+            Console.WriteLine(tekst2[2]);
+            int[] ints = new int[10000];
+            for (int i = 0; i < ints.Length; i++)
+            {
+                ints[i] = (i + 1) * 2;
+            }
+            int tex;
+            for (int i = 0; i < ints.Length / 2; i++)
+            {
+                tex = ints[ints.Length - 1 - i];
+                ints[ints.Length - 1 - i] = ints[i];
+                ints[i] = tex;
+            }
+
             Console.Write("[");
-            for (int i = 0; i < 9999; i++) 
+            for (int i = 0; i < ints.Length - 1; i++) 
             {
                 Console.Write(ints[i] + ", ");
             }
-            Console.Write(ints[9999] + "]");
+            Console.Write(ints[ints.Length - 1] + "]");
 
         }
     }
 }
+//
+//
