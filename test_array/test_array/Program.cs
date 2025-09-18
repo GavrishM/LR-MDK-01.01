@@ -24,14 +24,21 @@ namespace test_array
             tekst2[1] = tekst1[1];
             tekst2[2] = tekst1[0];
             Console.WriteLine(tekst2[0]);
-            Console.WriteLine(tekst2[1]);
-            Console.WriteLine(tekst2[2]);
-            int[] ints = new int[10000];
-            for (int i = 0; i < 10000; i++) ints[i] = i + 1;
-                Console.Write("[ ");
-            for (int i = 0; i < 9999; i++) Console.Write(ints[i] +", ");
-            Console.Write(ints[9999] + " ]");
-
+            Console.WriteLine(tekst2[1]);                    //
+            Console.WriteLine(tekst2[2]);                   //
+            int[] ints = new int[10000];                   //
+            for (int i = 0; i < 10000; i++)               //
+            {                                            //
+                ints[i] = (i + 1)*2;                    //\\    //\\    //\\    //\\    //\\    //\\
+            }                                          //  \\  //  \\  //  \\  //  \\  //  \\  //  \\
+                                                      //    \\//    \\//    \\//    \\//    \\//    \\
+            
+            Console.Write("[");
+            for (int i = 0; i < 9999; i++) 
+            {
+                Console.Write(ints[i] + ", ");
+            }
+            Console.Write(ints[9999] + "]");
 
         }
     }
