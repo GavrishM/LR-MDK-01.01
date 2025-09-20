@@ -11,25 +11,25 @@ namespace test_list
         static void Main(string[] args)
         {
             List<string> tekst = new List<string>();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            tekst.Add("ooooooooo");
+            tekst.Add("AAAAAAAAA");
+            tekst.Add("/////////");
+            tekst.Add("OOOOOOOOO");
+            tekst.Add("JJJJJJJJJ");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
