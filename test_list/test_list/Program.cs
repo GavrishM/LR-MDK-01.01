@@ -16,7 +16,9 @@ namespace test_list
             tekst.Add("/////////");
             tekst.Add("OOOOOOOOO");
             tekst.Add("JJJJJJJJJ");
-
+            Console.WriteLine("Введите текст");
+            string tex = Console.ReadLine();
+            
 
 
 
@@ -38,15 +40,15 @@ namespace test_list
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//       /\    /\
-//      /  \  /  \
-//     /    \/    \
+//                /\
+//               /
+//              /
+//             /\
+//            /  \
+//           /    \
+//          /\    /\
+//         /  \  /  \
+//        /    \/    \
+//       /\    /\    /\
+//      /  \  /  \  /  \
+//     /    \/    \/    \
