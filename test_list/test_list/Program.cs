@@ -10,17 +10,31 @@ namespace test_list
     {
         static void Main(string[] args)
         {
-            List<string> tekst = new List<string>();
-            tekst.Add("ooooooooo");
-            tekst.Add("AAAAAAAAA");
-            tekst.Add("/////////");
-            tekst.Add("OOOOOOOOO");
-            tekst.Add("JJJJJJJJJ");
+            List<string> initText = new List<string>();
+            initText.Add("земля");
+            initText.Add("воздух");
+            initText.Add("вода");
+            initText.Add("Т5");
+            initText.Add("свет");
             Console.WriteLine("Введите текст");
-            string tex = Console.ReadLine();
-            Console.WriteLine("Tекст "+tex);
+            string text = Console.ReadLine();
+            Console.WriteLine("Текст "+text);
+            List<string> inputText = new List<string>();
+            for(int i = 0; i < initText.Count; i++)
+            {
 
-
+                if (initText[i].Contains(text))
+                {
+                    inputText.Add(initText[i]);  
+                }
+                
+            }
+            for (int i = 0; i < inputText.Count; i++)
+            {
+                Console.WriteLine(inputText[i]);
+            }
+            
+            
 
 
 
@@ -37,18 +51,26 @@ namespace test_list
 }
 //
 //
-//                   /\
-//                  /  \
-//                 /    \
-//                /\    /\
-//               /  \  /
-//              /    \
-//             /\    /\
-//            /  \  /  \
-//           /    \/    \
-//          /\    /\    /\
-//         /  \  /  \  /  \
-//        /    \/    \/    \
-//       /\    /\    /\    /\
-//      /  \  /  \  /  \  /  \
-//     /    \/    \/    \/    \
+//
+//
+//
+//
+//
+//
+//
+//                    /\
+//                   //\\
+//                  //  \\
+//                 //    \\
+//                //\    /\\
+//               //  \  /  \\
+//              //    \/    \\
+//             //\    /\    /\\
+//            //  \  /  \  /  \\
+//           //    \/    \/    \\
+//          //\    /\    /\    /\\
+//         //  \  /  \  /  \  /  \\
+//        //    \/    \/    \/    \\
+//       //\    /\    /\    /\    /\\
+//      //  \  /  \  /  \  /  \  /  \\
+//     //    \/    \/    \/    \/    \\
