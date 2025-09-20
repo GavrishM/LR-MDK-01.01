@@ -10,7 +10,43 @@ namespace test_list
     {
         static void Main(string[] args)
         {
-
+            List<string> tekst = new List<string>();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         }
     }
 }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//       /\    /\
+//      /  \  /  \
+//     /    \/    \
