@@ -9,7 +9,7 @@ namespace Number2
     class Program
     {
         static void Main(string[] args)
-        {
+        {       //Вариант 4
 
             Random rnd = new Random();
             int[] ints = new int[5000];
