@@ -28,36 +28,13 @@ namespace Number2
                 }
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            Console.WriteLine("Числа больше 900:");
+            Console.Write("[");
+            for (int i = 0; i < largeInts.Count - 1; i++)
+            {
+                Console.Write(largeInts[i] + ", ");
+            }
+            Console.Write(largeInts[largeInts.Count - 1] + "]");
 
         }
     }
