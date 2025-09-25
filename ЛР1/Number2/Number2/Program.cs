@@ -15,7 +15,10 @@ namespace Number2
             int[] ints = new int[5000];
             List<int> largeInts = new List<int>();
 
-
+            for (int i = 0; i < ints.Length; i++)
+            {
+                ints[i] = rnd.Next(-1000, 1001);
+            }
 
 
 
