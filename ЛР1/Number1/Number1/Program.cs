@@ -15,6 +15,9 @@ namespace Number1
             int massiveSive;
             int multiplication = 1;
 
+            Console.WriteLine("Введите размер массива");
+            input = Console.ReadLine();
+            massiveSive = Convert.ToInt32(input);
 
         }
     }
