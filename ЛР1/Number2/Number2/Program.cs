@@ -20,7 +20,13 @@ namespace Number2
                 ints[i] = rnd.Next(-1000, 1001);
             }
 
-
+            for (int i = 0; i < ints.Length; i++)
+            {
+                if (ints[i] > 900)
+                {
+                    largeInts.Add(ints[i]);
+                }
+            }
 
 
 
