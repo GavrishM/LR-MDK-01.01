@@ -26,6 +26,18 @@ namespace Number1
                 input = Console.ReadLine();
                 ints[i] = Convert.ToInt32(input);
             }
+
+            for (int i = 0; i < ints.Length; i++)
+            {
+                if (ints[i] < 0)
+                {
+                    multiplication = multiplication * ints[i];
+                }
+            }
+
+
+
+
         }
     }
 }
