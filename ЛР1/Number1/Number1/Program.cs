@@ -9,7 +9,7 @@ namespace Number1
     class Program
     {
         static void Main(string[] args)
-        {
+        {               //Вариант 4
 
             string input;
             int massiveSive;
