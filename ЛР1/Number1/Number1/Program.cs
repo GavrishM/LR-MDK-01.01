@@ -35,7 +35,7 @@ namespace Number1
                 }
             }
 
-
+            Console.WriteLine("Произведение отрицательных элементов массива = " + multiplication);
 
 
         }
