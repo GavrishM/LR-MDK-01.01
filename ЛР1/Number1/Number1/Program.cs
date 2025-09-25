@@ -19,6 +19,13 @@ namespace Number1
             input = Console.ReadLine();
             massiveSive = Convert.ToInt32(input);
 
+            int[] ints = new int[massiveSive];
+            for (int i = 0; i < ints.Length; i++)
+            {
+                Console.WriteLine("Введите число " + (i + 1));
+                input = Console.ReadLine();
+                ints[i] = Convert.ToInt32(input);
+            }
         }
     }
 }
