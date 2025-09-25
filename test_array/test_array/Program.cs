@@ -45,6 +45,19 @@ namespace test_array
                 Console.Write(ints[i] + ", ");
             }
             Console.Write(ints[ints.Length - 1] + "]");
+            List<char> chars1 = new List<char>();
+            List<char> chars2 = new List<char>();
+            do
+            {
+                Console.WriteLine("Введите символ.(- для остановки ввода)");
+                char tex2;
+
+
+            }
+            while (false);
+            char[] chars3 = new char [chars1.Count];
+            char[] chars4 = new char[chars2.Count];
+            
 
         }
     }
