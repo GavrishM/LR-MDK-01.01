@@ -15,6 +15,7 @@ namespace Number1
             int massiveSive;
             int multiplication = 1;
 
+
         }
     }
 }
