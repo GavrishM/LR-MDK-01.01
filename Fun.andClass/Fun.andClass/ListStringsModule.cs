@@ -9,9 +9,9 @@ namespace Fun.andClass
     class ListStringsModule
     {
         static public List<string> InputStringsList()
-        { 
+        {
             List<string> outputList = new List<string>();
-            
+
             bool isActive = true;
             while (isActive)
             {
@@ -32,10 +32,13 @@ namespace Fun.andClass
 
             return outputList;
         }
+        static public List<int> FindInList(List<string> inputList, string text)
+        {
+            List<int> outputList = new List<int>();
 
 
 
-
-
+            return outputList;
+        }
     }
 }
