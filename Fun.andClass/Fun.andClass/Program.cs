@@ -17,7 +17,7 @@ namespace Fun.andClass
               4. Вызов реализованной функции с целью получить данные  
               5. Вывести последний элемент списка на экран и размер списка
               6. Определить функцию поиска номеров элементов, содержащих текст text
-              7. 
+              7. Реализация функции
              */
             List<string>  userList = ListStringsModule.InputStringsList();
             Console.WriteLine("Последний элемент списка: \n" + userList[userList.Count - 1]);
