@@ -8,5 +8,17 @@ namespace Fun.andClass
 {
     class ListStringsModule
     {
+        static public List<string> InputStringsList()
+        { 
+        List<string> outputList = new List<string>();
+
+
+            return outputList;
+        }
+
+
+
+
+
     }
 }
