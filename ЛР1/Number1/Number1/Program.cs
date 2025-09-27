@@ -14,6 +14,7 @@ namespace Number1
             string input;
             int massiveSive;
             int multiplication = 1;
+            bool isNumber = false;
 
             Console.WriteLine("Введите размер массива");
             input = Console.ReadLine();
