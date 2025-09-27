@@ -36,13 +36,13 @@ namespace Fun.andClass
         {
             List<int> outputList = new List<int>();
 
-            
-
-
-
-
-
-
+            for (int i = 0; i < inputList.Count; i++)
+            {
+                if (inputList[i].Contains(text))
+                {
+                    outputList.Add(i);
+                }
+            }
 
             return outputList;
         }
