@@ -10,7 +10,7 @@ namespace Fun.andClass
     {
         static public List<string> InputStringsList()
         { 
-        List<string> outputList = new List<string>();
+            List<string> outputList = new List<string>();
             
             bool isActive = true;
             while (isActive)
