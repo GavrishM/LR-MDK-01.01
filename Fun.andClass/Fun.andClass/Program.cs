@@ -17,7 +17,8 @@ namespace Fun.andClass
               4. Вызов реализованной функции с целью получить данные  
               5. 
              */
-
+            List<string>  userList = ListStringsModule.InputStringsList();
+    
         }
     }
 }
