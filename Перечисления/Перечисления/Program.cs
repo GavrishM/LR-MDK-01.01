@@ -8,9 +8,9 @@ namespace Перечисления
 {
     class Program
     {
-        enum month
+        enum Month
         {
-            January=1,
+            January = 1,
             February,
             March,
             April,
@@ -22,6 +22,15 @@ namespace Перечисления
             October,
             November,
             December
+        }
+        enum Week
+        { 
+        Monday = 1,
+        Tuesday,
+        Wednesday,
+        Friday,
+        Saturday,
+        Sunday
         }
         static void Main(string[] args)
         {
