@@ -32,6 +32,12 @@ namespace Перечисления
         Saturday,
         Sunday
         }
+        enum Colors
+        { 
+        Red,
+        Green,
+        Blue
+        }
         static void Main(string[] args)
         {
             
