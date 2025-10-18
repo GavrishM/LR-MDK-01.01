@@ -36,30 +36,42 @@ namespace Перечисления
         { 
         Red,
         Green,
-        Blue
+        Blue,
+        Yellow
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("012");
-            int color = Convert.ToInt32(Console.ReadLine());
-            switch (color)
+            while (true)
             {
-                case (0):
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(Colors.Red);
-                    break;
-                case (1):
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(Colors.Green);
-                    break;
-                case (2):
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine(Colors.Blue);
-                    break;
+                Console.WriteLine("0123");
+                int color = Convert.ToInt32(Console.ReadLine());
+                switch (color)
+                {
+                    case (0):
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(Colors.Red);
+                        break;
+                    case (1):
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(Colors.Green);
+                        break;
+                    case (2):
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine(Colors.Blue);
+                        break;
+                    case (3):
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(Colors.Yellow);
+                        break;
+                    default:
+                        break;
 
+                }
+                
             }
-            Console.ForegroundColor= ConsoleColor.White;
+        }
         }
     }
-}
+
+
 
