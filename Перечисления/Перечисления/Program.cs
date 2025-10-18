@@ -8,11 +8,31 @@ namespace Перечисления
 {
     class Program
     {
+        enum month
+        {
+            January=1,
+            February,
+            March,
+            April,
+            May,
+            June,
+            July,
+            August,
+            September,
+            October,
+            November,
+            December
+        }
         static void Main(string[] args)
         {
+            
 
+            
+        
+            
 
 
         }
     }
 }
+
