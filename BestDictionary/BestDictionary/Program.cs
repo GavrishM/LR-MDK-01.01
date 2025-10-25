@@ -9,12 +9,12 @@ namespace BestDictionary
 {
     class Program
     {
-        static int Keyscount(Dictionary<string, List<string>> Dict)
+        static void Keyscount(Dictionary<string, List<string>> Dict)
         {
             Console.WriteLine("Введите ключ");
             string input = Console.ReadLine();
             int output = Dict[input].Count;
-            return output;
+            Console.WriteLine(output);
         }
         static void Main(string[] args)
         {
@@ -35,7 +35,7 @@ namespace BestDictionary
             Console.WriteLine(keys);
             string X = "colors";
             Console.WriteLine(string.Join(", ", Dict[X]));
-            Console.WriteLine(Keyscount(Dict));
+            Keyscount(Dict);
 
         }
     }
