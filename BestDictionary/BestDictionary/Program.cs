@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,9 @@ namespace BestDictionary
 
 
             Dictionary<string, List<string>> Dict = new Dictionary<string, List<string>>();
+            Dict.Add("one", new List<string>());
+            Dict.Add("two", new List<string>());
+            Dict.Add("three", new List<string>());
         }
     }
 }
