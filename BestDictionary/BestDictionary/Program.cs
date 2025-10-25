@@ -22,8 +22,20 @@ namespace BestDictionary
 
             Dictionary<string, List<string>> Dict = new Dictionary<string, List<string>>();
             Dict.Add("one", new List<string>());
+            Dict["one"].Add("one");
+            Dict["one"].Add("two");
+            Dict["one"].Add("tree");
+            Dict["one"].Add("four");
             Dict.Add("two", new List<string>());
+            Dict["two"].Add("one");
+            Dict["two"].Add("two");
+            Dict["two"].Add("tree");
+            Dict["two"].Add("four");
             Dict.Add("three", new List<string>());
+            Dict["three"].Add("one");
+            Dict["three"].Add("two");
+            Dict["three"].Add("tree");
+            Dict["three"].Add("four");
         }
     }
 }
