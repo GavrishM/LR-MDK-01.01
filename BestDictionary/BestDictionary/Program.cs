@@ -11,7 +11,7 @@ namespace BestDictionary
     {
         static int Keyscount(Dictionary<string, List<string>> Dict)
         {
-            Console.WriteLine("");
+            Console.WriteLine("Введите ключ");
             string input = Console.ReadLine();
             int output = Dict[input].Count;
             return output;
