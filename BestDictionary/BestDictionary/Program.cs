@@ -9,13 +9,20 @@ namespace BestDictionary
 {
     class Program
     {
+        static int Keyscount(Dictionary<string, List<string>> Dict)
+        {
+            Console.WriteLine("");
+            string input = Console.ReadLine();
+            int output = Dict[input].Count;
+            return output;
+        }
         static void Main(string[] args)
         {
             //1. Создать произвольный ПУСТОЙ словарь, где ключ - строка, а значение список строк.
             //2. Добавить 3 ключа со своими значениями.
             //3. Вывести на экран все ключи словаря.
             //4. Вывести на экран значение через ", " по ключу X (любому).
-            //5. 
+            //5. Реализуем функцию: запрос ключа пользователем. По запросу выводит число элементов значения указанного ключа.
             //6. 
             //7. 
 
@@ -27,7 +34,9 @@ namespace BestDictionary
             string keys = string.Join(",", Dict.Keys);
             Console.WriteLine(keys);
             string X = "colors";
-            Console.WriteLine(string.Join(",", Dict[X]));
+            Console.WriteLine(string.Join(", ", Dict[X]));
+            Console.WriteLine(Keyscount(Dict));
+
         }
     }
 }
