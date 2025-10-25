@@ -10,6 +10,12 @@ namespace BestDictionary
     {
         static void Main(string[] args)
         {
+            //1.Создать произвольный ПУСТОЙ словарь, где ключ - строка, а значение список строк.
+
+
+
+
+
 
         }
     }
