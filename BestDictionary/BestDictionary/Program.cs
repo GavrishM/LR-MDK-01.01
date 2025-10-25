@@ -24,7 +24,8 @@ namespace BestDictionary
             Dict.Add("colors", new List<string>() {"red", "green", "blue"});
             Dict.Add("birds", new List<string>() { "crow", "pigeon", "parrot"});
             Dict.Add("locations", new List<string>() { "orange_forest", "barier", "dark_valley"});
-            
+            string keys = string.Join(",", Dict.Keys);
+            Console.WriteLine(keys);
         }
     }
 }
