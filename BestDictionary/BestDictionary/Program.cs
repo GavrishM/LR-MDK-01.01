@@ -17,6 +17,9 @@ namespace BestDictionary
 
 
 
+
+
+            Dictionary<string, List<string>> Dict = new Dictionary<string, List<string>>();
         }
     }
 }
