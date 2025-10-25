@@ -13,8 +13,15 @@ namespace BestDictionary
         {
             Console.WriteLine("Введите ключ");
             string input = Console.ReadLine();
-            int output = Dict[input].Count;
-            Console.WriteLine(output);
+            if (Dict.ContainsKey(input))
+            {
+                int output = Dict[input].Count;
+                Console.WriteLine(output);
+            }
+            else 
+            {
+                Console.WriteLine("Такого ключа нет");
+             }
         }
         static void Main(string[] args)
         {
@@ -23,6 +30,7 @@ namespace BestDictionary
             //3. Вывести на экран все ключи словаря.
             //4. Вывести на экран значение через ", " по ключу X (любому).
             //5. Реализуем функцию: запрос ключа пользователем. По запросу выводит число элементов значения указанного ключа.
+            //
             //6. 
             //7. 
 
