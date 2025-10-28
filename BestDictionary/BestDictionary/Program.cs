@@ -21,7 +21,7 @@ namespace BestDictionary
             else 
             {
                 Console.WriteLine("Такого ключа нет");
-             }
+            }
         }
         static void Main(string[] args)
         {
@@ -30,9 +30,9 @@ namespace BestDictionary
             //3. Вывести на экран все ключи словаря.
             //4. Вывести на экран значение через ", " по ключу X (любому).
             //5. Реализуем функцию: запрос ключа пользователем. По запросу выводит число элементов значения указанного ключа.
-            //
-            //6. 
+            //6. Поиск по ключу должен быть регистронезависимым
             //7. 
+            //8. 
 
 
             Dictionary<string, List<string>> Dict = new Dictionary<string, List<string>>();
