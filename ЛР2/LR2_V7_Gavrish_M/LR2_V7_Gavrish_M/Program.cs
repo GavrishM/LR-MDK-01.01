@@ -33,9 +33,25 @@ namespace LR2_V7_Gavrish_M
             productList = categories[UserQuery];
             return (productList);
         }
+        static Dictionary<string, int> findAveragePrice(Dictionary<string, List<int>> productList)
+        {
+            List<string> keys;
+            string product = "";
+            int aPrice = 0;
+            Dictionary<string, int> products;
+            for (int i = 0; i < productList.Count; i++) 
+            {
+
+                products.Add(product, aPrice);
+            }
+
+            return (products);
+        }
+        
+       
         static void Main(string[] args)
         {
-          
+          //если здесь есть эта надпись, значит проект еще не доделан
         }
     }
 }
