@@ -27,6 +27,12 @@ namespace LR2_V7_Gavrish_M
             }
             return(UserQuery);
         }
+        static Dictionary<string, List<int>> findProductsList(string UserQuery, Dictionary<string, Dictionary<string, List<int>>> categories) 
+        {
+            Dictionary<string, List<int>> productList;
+            productList = categories[UserQuery];
+            return (productList);
+        }
         static void Main(string[] args)
         {
           
