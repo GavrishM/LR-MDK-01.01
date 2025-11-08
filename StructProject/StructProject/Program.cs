@@ -50,5 +50,14 @@ namespace StructProject
                 + Point.CalcLenVector(allVectors[4].begin, allVectors[4].end));
 
         }
+        static public double[] findVectorsLen(Vector[] vectors)
+        {
+            double[] vectorsLen = new double[vectors.Length];
+            for(int i = 0; i < vectorsLen.Length; i++) 
+            {
+                vectorsLen[i] = Point.CalcLenVector(vectors[i].begin, vectors[i].end);
+            }
+            return vectorsLen;
+        }
     }
 }
