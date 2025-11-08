@@ -69,8 +69,13 @@ namespace LR2_V7_Gavrish_M
             }
             return result;
         }
-
-
+        static void outputList(List<string> list)
+        {
+            foreach (var item in list)
+            { 
+            Console.WriteLine(item);
+            }
+        }
         static void Main(string[] args)
         {
           //если здесь есть эта надпись, значит проект еще не доделан
