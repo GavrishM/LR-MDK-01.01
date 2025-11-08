@@ -33,18 +33,19 @@ namespace LR2_V7_Gavrish_M
             productList = categories[UserQuery];
             return (productList);
         }
-        static Dictionary<string, int> findAveragePrice(Dictionary<string, List<int>> productList)
+        static Dictionary<string, double> findAveragePrice(Dictionary<string, List<int>> productList)
         {
-            List<string> keys;
-            string product = "";
-            int aPrice = 0;
-            Dictionary<string, int> products;
-            for (int i = 0; i < productList.Count; i++) 
+            double aPrice = 0;
+            Dictionary<string, double> products = new Dictionary<string, double>();
+            foreach (var key in productList)
             {
-
-                products.Add(product, aPrice);
+                foreach (var ints in key.Value)
+                {
+                    aPrice += ints;
+                }
+                aPrice = aPrice / key.Value.Count;
+                    products.Add(key.Key, aPrice);
             }
-
             return (products);
         }
         
