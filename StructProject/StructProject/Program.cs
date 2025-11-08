@@ -61,6 +61,7 @@ namespace StructProject
                 vectorsLen[i] = Point.CalcLenVector(vectors[i].begin, vectors[i].end);
             }
             return vectorsLen;
+          
             //Создать новый проект с описанием структуры комп. игры. ввести в систему 100 комп. игр. вывести на экран топ10 самых востребованных игр.
         }
     }
