@@ -43,14 +43,17 @@ namespace StructProject
                 Console.WriteLine($"{v.begin.Name}:({v.begin.X}, {v.begin.Y})" +
                   $" | {v.end.Name}:({v.end.X}, {v.end.Y})");
 
-                Thread.Sleep(2000);
+                Thread.Sleep(20);
             }
 
             Console.WriteLine("Длина 5 вектора = " 
                 + Point.CalcLenVector(allVectors[4].begin, allVectors[4].end));
-
+            for(int i = 0; i < FindVectorsLen(allVectors).Length; i++) 
+            {
+                Console.WriteLine("Длина вектора " + (i + 1) + " = " + FindVectorsLen(allVectors)[i]);
+            }
         }
-        static public double[] findVectorsLen(Vector[] vectors)
+        static public double[] FindVectorsLen(Vector[] vectors)
         {
             double[] vectorsLen = new double[vectors.Length];
             for(int i = 0; i < vectorsLen.Length; i++) 
@@ -58,6 +61,7 @@ namespace StructProject
                 vectorsLen[i] = Point.CalcLenVector(vectors[i].begin, vectors[i].end);
             }
             return vectorsLen;
+            //Создать новый проект с описанием структуры комп. игры. ввести в систему 100 комп. игр. вывести на экран топ10 самых востребованных игр.
         }
     }
 }
