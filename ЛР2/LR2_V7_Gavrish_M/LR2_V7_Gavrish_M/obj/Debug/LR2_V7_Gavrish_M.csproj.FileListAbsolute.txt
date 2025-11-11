@@ -6,3 +6,10 @@ D:\Репозиторий\LR-MDK-01.01\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\o
 D:\Репозиторий\LR-MDK-01.01\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\obj\Debug\LR2_V7_Gavrish_M.exe
 D:\Репозиторий\LR-MDK-01.01\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\obj\Debug\LR2_V7_Gavrish_M.pdb
 D:\Репозиторий\LR-MDK-01.01\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\obj\Debug\LR2_V7_Gavrish_M.exe.config
+D:\П-30\Гавриш\МДК01.01\Репозиторий\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\bin\Debug\LR2_V7_Gavrish_M.exe.config
+D:\П-30\Гавриш\МДК01.01\Репозиторий\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\bin\Debug\LR2_V7_Gavrish_M.exe
+D:\П-30\Гавриш\МДК01.01\Репозиторий\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\bin\Debug\LR2_V7_Gavrish_M.pdb
+D:\П-30\Гавриш\МДК01.01\Репозиторий\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\obj\Debug\LR2_V7_Gavrish_M.csproj.AssemblyReference.cache
+D:\П-30\Гавриш\МДК01.01\Репозиторий\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\obj\Debug\LR2_V7_Gavrish_M.csproj.CoreCompileInputs.cache
+D:\П-30\Гавриш\МДК01.01\Репозиторий\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\obj\Debug\LR2_V7_Gavrish_M.exe
+D:\П-30\Гавриш\МДК01.01\Репозиторий\ЛР2\LR2_V7_Gavrish_M\LR2_V7_Gavrish_M\obj\Debug\LR2_V7_Gavrish_M.pdb
