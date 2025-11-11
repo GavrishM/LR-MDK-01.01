@@ -8,12 +8,12 @@ namespace LR2_V7_Gavrish_M
 {
     public class Output
     {
-        public static void outputList(List<string> list, Dictionary<string, double> price)
+        public static void List(Dictionary<string, double> list)
         {
-            foreach (string item in list)
+            foreach (var key in list)
             {
 
-                Console.WriteLine(item + " " + price[item]);
+                Console.WriteLine(key + " " + list[key]);
             }
         }
     }

@@ -8,13 +8,13 @@ namespace LR2_V7_Gavrish_M
 {
     public class Calc
     {
-        public static Dictionary<string, List<double>> findProductsList(string UserQuery, Dictionary<string, Dictionary<string, List<double>>> categories)
+        public static Dictionary<string, List<double>> FindProductsList(string UserQuery, Dictionary<string, Dictionary<string, List<double>>> categories)
         {
             Dictionary<string, List<double>> productList;
             productList = categories[UserQuery];
             return (productList);
         }
-        public static Dictionary<string, double> findAveragePrice(Dictionary<string, List<double>> productList)
+        public static Dictionary<string, double> FindAveragePrice(Dictionary<string, List<double>> productList)
         {
             double aPrice = 0;
             Dictionary<string, double> products = new Dictionary<string, double>();
@@ -31,9 +31,9 @@ namespace LR2_V7_Gavrish_M
             }
             return (products);
         }
-        public static List<string> sortList(Dictionary<string, double> list)
+        public static Dictionary<string, double> SortList(Dictionary<string, double> list)
         {
-            List<string> result = new List<string>();
+            Dictionary<string, double> result = new Dictionary<string, double>();
             string[] keys = new string[list.Count];
             double[] values = new double[list.Count];
             int index = 0;
@@ -48,7 +48,7 @@ namespace LR2_V7_Gavrish_M
             Array.Reverse(values);    // ^
             foreach (var key in keys)
             {
-                result.Add(key);
+                result.Add(key, values[keys[key]]);
             }
             return result;
         }

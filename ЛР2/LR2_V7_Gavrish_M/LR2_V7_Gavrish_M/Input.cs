@@ -8,7 +8,7 @@ namespace LR2_V7_Gavrish_M
 {
     public class Input
     {
-        public static string inputUserQuery(Dictionary<string, Dictionary<string, List<double>>> categories)
+        public static string UserQuery(Dictionary<string, Dictionary<string, List<double>>> categories)
         {
             string UserQuery = "";
             bool chek = true;

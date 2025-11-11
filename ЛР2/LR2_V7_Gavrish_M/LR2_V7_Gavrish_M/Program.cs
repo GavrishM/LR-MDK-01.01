@@ -50,9 +50,8 @@ namespace LR2_V7_Gavrish_M
             categories["фрукты"]["киви"].Add(6);
             categories["фрукты"]["киви"].Add(4);
             categories["фрукты"]["киви"].Add(5);
-            string input = Input.inputUserQuery(categories);
-            Output.outputList(Calc.sortList(Calc.findAveragePrice(Calc.findProductsList(input, categories))),
-                Calc.findAveragePrice(Calc.findProductsList(input, categories)));
+            
+            Output.List(Calc.SortList(Calc.FindAveragePrice(Calc.FindProductsList(Input.UserQuery(categories), categories))));
 
         }
     }
