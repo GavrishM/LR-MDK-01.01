@@ -8,77 +8,6 @@ namespace LR2_V7_Gavrish_M
 {
     internal class Program
     {
-        static string inputUserQuery(Dictionary<string, Dictionary<string, List<double>>> categories)
-        {
-            string UserQuery = "";
-            bool chek = true;
-            while (chek)
-            {
-                Console.WriteLine("Введи название категории");
-                UserQuery = Console.ReadLine().ToLower();
-                if (categories.ContainsKey(UserQuery))
-                {
-                    chek = false;
-                }
-                else
-                {
-                    Console.WriteLine("Неправильно. Попробуй еще раз.");
-                }
-            }
-                return (UserQuery);
-        }
-        static Dictionary<string, List<double>> findProductsList(string UserQuery, Dictionary<string, Dictionary<string, List<double>>> categories) 
-        {
-            Dictionary<string, List<double>> productList;
-            productList = categories[UserQuery];
-            return (productList);
-        }
-        static Dictionary<string, double> findAveragePrice(Dictionary<string, List<double>> productList)
-        {
-            double aPrice = 0;
-            Dictionary<string, double> products = new Dictionary<string, double>();
-            foreach (var key in productList)
-            {
-                foreach (double doubles in key.Value)
-                {
-                    aPrice += doubles;
-                }
-                aPrice = (aPrice / key.Value.Count) * 100;
-                int teh = Convert.ToInt32(aPrice);
-                aPrice = Convert.ToDouble(teh) / 100;
-                    products.Add(key.Key, aPrice);
-            }
-            return (products);
-        }
-        static List<string> sortList(Dictionary<string, double> list)
-        {
-            List<string> result = new List<string>();
-            string[] keys = new string[list.Count];
-            double[] values = new double[list.Count];
-            int index = 0;
-            foreach (var key in list)
-            {
-                keys[index] = key.Key;
-                values[index] = key.Value;
-                index++;
-            }
-            Array.Sort(values, keys); // Сортировка значений
-            Array.Reverse(keys);      // Перевернем массивы чтобы получить сортировку по убыванию
-            Array.Reverse(values);    // ^
-            foreach (var key in keys)
-            {
-                result.Add(key);
-            }
-            return result;
-        }
-        static void outputList(List<string> list, Dictionary<string, double> price)
-        {
-            foreach (string item in list)
-            {
-
-                Console.WriteLine(item + " " + price[item]);
-            }
-        }
         static void Main(string[] args)
         {
             Dictionary<string, Dictionary<string, List<double>>> categories = new Dictionary<string, Dictionary<string, List<double>>>();
@@ -121,9 +50,9 @@ namespace LR2_V7_Gavrish_M
             categories["фрукты"]["киви"].Add(6);
             categories["фрукты"]["киви"].Add(4);
             categories["фрукты"]["киви"].Add(5);
-
-            outputList(sortList(findAveragePrice(findProductsList(inputUserQuery(categories), categories))),
-                findAveragePrice(findProductsList(inputUserQuery(categories), categories)));
+            string input = Input.inputUserQuery(categories);
+            Output.outputList(Calc.sortList(Calc.findAveragePrice(Calc.findProductsList(input, categories))),
+                Calc.findAveragePrice(Calc.findProductsList(input, categories)));
 
         }
     }
