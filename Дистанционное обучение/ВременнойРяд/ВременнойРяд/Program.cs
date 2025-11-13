@@ -24,12 +24,40 @@ namespace ВременнойРяд
             modelList[3] = "Google Pixel 6";
             modelList[4] = "Samsung Galaxy S22";
             modelList[5] = "iPhone 14";
+            int[] modelPrice = new int[6];
+            modelPrice[0] = 1000;
+            modelPrice[1] = 900;
+            modelPrice[2] = 2500;
+            modelPrice[3] = 1200;
+            modelPrice[4] = 1900;
+            modelPrice[5] = 1500;
             List<Day> days= new List<Day>();
             Random rnd = new Random();
+            int model;
+            for (int i = 1; i < 31; i++)
+            {
+                days.Add
+                    (
+                    new Day
+                    (
+                    new DateTime(i, 2, 2025),
+                    new List<Sale>
+                    (
+                        new Sale()
+                    )
+                    )
+                    );
 
 
 
 
+
+
+
+
+            }
+
+            //Если эта надпись присутствует лучше проверить работу вечером
         }
     }
 }
