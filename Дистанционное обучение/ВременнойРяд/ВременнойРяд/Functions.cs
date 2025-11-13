@@ -60,73 +60,19 @@ namespace ВременнойРяд
                     max = counter[i];
                 }
             }
-            switch (max)
-            {
-                case 0:
-                    {
-                        mostSoldPhone = "iPhone 13";
-                        break;
-                    }
-                case 1:
-                    {
-                        mostSoldPhone = "Samsung Galaxy S21";
-                        break;
-                    }
-                case 2:
-                    {
-                        mostSoldPhone = "iPhone 15";
-                        break;
-                    }
-                case 3:
-                    {
-                        mostSoldPhone = "Google Pixel 6";
-                        break;
-                    }
-                case 4:
-                    {
-                        mostSoldPhone = "Samsung Galaxy S22";
-                        break;
-                    }
-                case 5:
-                    {
-                        mostSoldPhone = "iPhone 14";
-                        break;
-                    }
-            }
-            switch (min)
-            {
-                case 0:
-                    {
-                        leastSoldPhone = "iPhone 13";
-                        break;
-                    }
-                case 1:
-                    {
-                        leastSoldPhone = "Samsung Galaxy S21";
-                        break;
-                    }
-                case 2:
-                    {
-                        leastSoldPhone = "iPhone 15";
-                        break;
-                    }
-                case 3:
-                    {
-                        leastSoldPhone = "Google Pixel 6";
-                        break;
-                    }
-                case 4:
-                    {
-                        leastSoldPhone = "Samsung Galaxy S22";
-                        break;
-                    }
-                case 5:
-                    {
-                        leastSoldPhone = "iPhone 14";
-                        break;
-                    }
-            }
-            Console.WriteLine("Самый продоваемый телефон: " + mostSoldPhone);
+            if (max == counter[0]) mostSoldPhone = "iPhone 13";
+            if (max == counter[1]) mostSoldPhone = "Samsung Galaxy S21";
+            if (max == counter[2]) mostSoldPhone = "iPhone 15";
+            if (max == counter[3]) mostSoldPhone = "Google Pixel 6";
+            if (max == counter[4]) mostSoldPhone = "Samsung Galaxy S22";
+            if (max == counter[5]) mostSoldPhone = "iPhone 14";
+            if (min == counter[0]) leastSoldPhone = "iPhone 13";
+            if (min == counter[1]) leastSoldPhone = "Samsung Galaxy S21";
+            if (min == counter[2]) leastSoldPhone = "iPhone 15";
+            if (min == counter[3]) leastSoldPhone = "Google Pixel 6";
+            if (min == counter[4]) leastSoldPhone = "Samsung Galaxy S22";
+            if (min == counter[5]) leastSoldPhone = "iPhone 14";
+            Console.WriteLine("Самый продаваемый телефон: " + mostSoldPhone);
             Console.WriteLine("Телефон с наименьшим фактом продаж: " + leastSoldPhone);
         }
         static public int[] FindModelSalesPrice(List<Day> days)
@@ -182,7 +128,7 @@ namespace ВременнойРяд
                 if (max2 == price[4]) secondMostSoldPhone = "Samsung Galaxy S22";
                 if (max2 == price[5]) secondMostSoldPhone = "iPhone 14";
             }
-            Console.WriteLine("Два телефона, приносящие наибольшую прибыль:" + mostSoldPhone + ", " + secondMostSoldPhone);
+            Console.WriteLine("Два телефона, приносящие наибольшую прибыль: " + mostSoldPhone + ", " + secondMostSoldPhone);
         }
     }
 }

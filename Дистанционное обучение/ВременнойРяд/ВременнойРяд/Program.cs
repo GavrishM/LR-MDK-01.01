@@ -54,17 +54,11 @@ namespace ВременнойРяд
                 }
                 days.Add(day);
             }
-
-
-
-
-
-
-
-
-
-
-            //Если эта надпись присутствует лучше проверить работу вечером
+            DateTime start = new DateTime(2025, 10, 23);
+            DateTime end = new DateTime(2025, 11, 10);
+            Console.WriteLine("Общая сумма проданного за период: " + Functions.FindSalesPrice(days, start, end));
+            Functions.FindMostAndLeastSoldPhone(days);
+            Functions.FindTwoBestModel(days);
         }
     }
 }
