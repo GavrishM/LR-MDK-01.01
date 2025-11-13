@@ -12,9 +12,9 @@ namespace ВременнойРяд
         public int Quantity;        //   Количество
         public int Price;           //   Цена
                                     // V Цена купленных телефонов
-        static public int SalePrice (int Quantity, int Price)
+        static public int SalePrice (Sale sale)
         {
-            int salePrice = Quantity * Price;
+            int salePrice = sale.Quantity * sale.Price;
             return salePrice;
         }
 
