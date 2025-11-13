@@ -17,7 +17,5 @@ namespace ВременнойРяд
             int salePrice = sale.Quantity * sale.Price;
             return salePrice;
         }
-
-
     }
 }
