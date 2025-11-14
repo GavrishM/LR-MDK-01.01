@@ -8,14 +8,9 @@ namespace ВременнойРяд
 {
     public struct Sale              //   Продажа телефона\телефонов
     {                               //
+        public DateTime Date;       //   Дата
         public string PhoneModel;   //   Модель телефона
         public int Quantity;        //   Количество
         public int Price;           //   Цена
-                                    // V Цена купленных телефонов
-        static public int SalePrice (Sale sale)
-        {
-            int salePrice = sale.Quantity * sale.Price;
-            return salePrice;
-        }
     }
 }

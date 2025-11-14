@@ -17,7 +17,6 @@ namespace ВременнойРяд
             // в) определить два телефона, приносящие наибольшую прибыль
             //    Данные о продажах представить как временной ряд
             //    В качестве метки времени использовать дату(объект DateTime)
-            //C# List<Day(DateTime Date, List<Sale(PhoneModel, Quantity, Price) SaleList)> days
             string[] modelList = new string[6];     //Список моделей телефонов
             modelList[0] = "iPhone 13";
             modelList[1] = "Samsung Galaxy S21";
@@ -32,33 +31,30 @@ namespace ВременнойРяд
             modelPrice[3] = 1200;
             modelPrice[4] = 1900;
             modelPrice[5] = 1500;
-            List<Day> days= new List<Day>();
+            List<Sale> sales= new List<Sale>();
             Random rnd = new Random();
             int model;
             // Генерация данных за 30 дней
             for (int i = 0; i < 30; i++)
             {
-                Day day = new Day();
-                day.Date = DateTime.Today.AddDays(-i); // последние 30 дней
-                day.SaleList = new List<Sale>();
+                Sale sale = new Sale();
+                sale.Date = DateTime.Today.AddDays(-i); // последние 30 дней
                 // 5 продаж за день
                 for (int j = 0; j < 5; j++)
                 {
-                    Sale sale = new Sale();
+                    
                     model = rnd.Next(0, 6);        // случайная модель
                     sale.PhoneModel = modelList[model];
                     sale.Price = modelPrice[model];
                     sale.Quantity = rnd.Next(1, 6);    // 1–5 телефонов
-
-                    day.SaleList.Add(sale);
                 }
-                days.Add(day);
+                sales.Add(sale);
             }
             DateTime start = new DateTime(2025, 10, 23);
             DateTime end = new DateTime(2025, 11, 10);
-            Console.WriteLine("Общая сумма проданного за период: " + Functions.FindSalesPrice(days, start, end));
-            Functions.FindMostAndLeastSoldPhone(days);
-            Functions.FindTwoBestModel(days);
+            Console.WriteLine("Общая сумма проданного за период: " + Functions.FindSalesPrice(sales, start, end));
+            Functions.FindMostAndLeastSoldPhone(sales);
+            Functions.FindTwoBestModel(sales);
         }
     }
 }

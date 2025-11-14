@@ -9,22 +9,26 @@ namespace ВременнойРяд
 {
     internal class Functions
     {
-        static public int FindSalesPrice(List<Day> days, DateTime start, DateTime end)
+        static public int CalcSaleCount(Sale sale)
+        {                                               // Цена купленных телефонов
+            int salePrice = sale.Quantity * sale.Price;
+            return salePrice;
+        }
+        static public int FindSalesPrice(List<Sale> sales, DateTime start, DateTime end)
         {
             int salesPrice = 0;
-            foreach (Day day in days)
+            foreach (Sale sale in sales)
             {
-                if (day.Date > start | day.Date < end)
+                if (sale.Date > start | sale.Date < end)
                 {
-                    foreach (Sale sale in day.SaleList)
-                    {
-                        salesPrice += Sale.SalePrice(sale);
-                    }
+
+                    salesPrice += Functions.CalcSaleCount(sale);
+
                 }
             }
             return salesPrice;
         }
-        static public void FindMostAndLeastSoldPhone(List<Day> days)
+        static public void FindMostAndLeastSoldPhone(List<Sale> sales)
         {
             string mostSoldPhone = "";
             string leastSoldPhone = "";
@@ -37,9 +41,8 @@ namespace ВременнойРяд
             counter[3] = 0;
             counter[4] = 0;
             counter[5] = 0;
-            foreach (Day day in days)
-            {
-                foreach (Sale sale in day.SaleList)
+            
+                foreach (Sale sale in sales)
                 {
                     if (sale.PhoneModel == "iPhone 13") counter[0] += sale.Quantity;
                     if (sale.PhoneModel == "Samsung Galaxy S21") counter[1] += sale.Quantity;
@@ -48,7 +51,7 @@ namespace ВременнойРяд
                     if (sale.PhoneModel == "Samsung Galaxy S22") counter[4] += sale.Quantity;
                     if (sale.PhoneModel == "iPhone 14") counter[5] += sale.Quantity;
                 }
-            }
+            
             for (int i = 0; i < 6; i++)
             {
                 if (counter[i] < min)
@@ -75,33 +78,32 @@ namespace ВременнойРяд
             Console.WriteLine("Самый продаваемый телефон: " + mostSoldPhone);
             Console.WriteLine("Телефон с наименьшим фактом продаж: " + leastSoldPhone);
         }
-        static public int[] FindModelSalesPrice(List<Day> days)
+        static public int[] FindModelSalesPrice(List<Sale> sales)
         {
             int[] result = new int[6];
-            foreach (Day day in days)
-            {
+            
 
-                foreach (Sale sale in day.SaleList)
+                foreach (Sale sale in sales)
                 {
-                    if (sale.PhoneModel == "iPhone 13") result[0] += Sale.SalePrice(sale);
-                    if (sale.PhoneModel == "Samsung Galaxy S21") result[1] += Sale.SalePrice(sale);
-                    if (sale.PhoneModel == "iPhone 15") result[2] += Sale.SalePrice(sale);
-                    if (sale.PhoneModel == "Google Pixel 6") result[3] += Sale.SalePrice(sale);
-                    if (sale.PhoneModel == "Samsung Galaxy S22") result[4] += Sale.SalePrice(sale);
-                    if (sale.PhoneModel == "iPhone 14") result[5] += Sale.SalePrice(sale);
+                    if (sale.PhoneModel == "iPhone 13") result[0] += Functions.CalcSaleCount(sale);
+                    if (sale.PhoneModel == "Samsung Galaxy S21") result[1] += Functions.CalcSaleCount(sale);
+                    if (sale.PhoneModel == "iPhone 15") result[2] += Functions.CalcSaleCount(sale);
+                    if (sale.PhoneModel == "Google Pixel 6") result[3] += Functions.CalcSaleCount(sale);
+                    if (sale.PhoneModel == "Samsung Galaxy S22") result[4] += Functions.CalcSaleCount(sale);
+                    if (sale.PhoneModel == "iPhone 14") result[5] += Functions.CalcSaleCount(sale);
 
                 }
-            }
+            
             return result;
         }
-        static public void FindTwoBestModel(List<Day> days)
+        static public void FindTwoBestModel(List<Sale> sales)
         {
             string mostSoldPhone = "";
             string secondMostSoldPhone = "";
             int max1 = 0;
             int max2 = 0;
             int[] price = new int[6];
-            price = FindModelSalesPrice(days);
+            price = FindModelSalesPrice(sales);
             for (int i = 0; i < 6; i++)
             {
                 if (price[i] > max1)
