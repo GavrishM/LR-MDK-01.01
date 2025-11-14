@@ -61,12 +61,15 @@ namespace DZ_08._11._25
         }
         static public Game[] Gen100Games() 
         {
+            Random rnd = new Random();
             Game[] result = new Game[100];
-            for(int i = 0; i < result count)
-            
-            
-            
-            return  result[];
+            for(int i = 0; i < result.Length; i++)
+            {
+                result[i].Name = GenGameName();
+                result[i].Downlouds = rnd.Next(0, 10000000);
+                result[i].Rates = rnd.Next(0, 10);
+            }
+            return  result;
         }
 
     }
