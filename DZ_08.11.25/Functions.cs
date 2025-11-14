@@ -66,11 +66,37 @@ namespace DZ_08._11._25
             for(int i = 0; i < result.Length; i++)
             {
                 result[i].Name = GenGameName();
-                result[i].Downlouds = rnd.Next(0, 10000000);
+                result[i].Downloads = rnd.Next(0, 10000000);
                 result[i].Rates = rnd.Next(0, 10);
             }
             return  result;
         }
+        static public Game[] SortGamesByDowlouds(Game[] games)
+        {
+            Game[] result = new Game[100];
+            // Сортировка пузырьком по убыванию количества загрузок
+            for (int i = 0; i < result.Length - 1; i++)
+            {
+                for (int j = 0; j < result.Length - 1 - i; j++)
+                {
+                    if (result[j].Downloads < result[j + 1].Downloads)
+                    {
+                        // Обмен элементов
+                        Game temp = result[j];
+                        result[j] = result[j + 1];
+                        result[j + 1] = temp;
+                    }
+                }
+            }
+            return result;
+        }
+        static public void OutputTop10Games(Game[] games)
+        {
+            for (int i = 0; i < 10; i++) 
+            {
+                Console.WriteLine(games[i]);
+            }
 
+        }
     }
 }
