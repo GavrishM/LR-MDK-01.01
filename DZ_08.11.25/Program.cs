@@ -10,21 +10,7 @@ namespace DZ_08._11._25
     {
         static void Main(string[] args)
         {
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            Functions.OutputTop10Games(Functions.SortGamesByDowloads(Functions.Gen100Games()));
         }
     }
 }
