@@ -9,20 +9,20 @@ namespace ВременнойРяд
 {
     internal class Functions
     {
-        static public int CalcSaleCount(Sale sale)
+        static public double CalcSaleCost(Sale sale)
         {                                               // Цена купленных телефонов
-            int salePrice = sale.Quantity * sale.Price;
+            double salePrice = sale.Quantity * sale.Price;
             return salePrice;
         }
-        static public int FindSalesPrice(List<Sale> sales, DateTime start, DateTime end)
+        static public double FindSalesPrice(List<Sale> sales, DateTime start, DateTime end)
         {
-            int salesPrice = 0;
+            double salesPrice = 0;
             foreach (Sale sale in sales)
             {
-                if (sale.Date > start | sale.Date < end)
+                if (sale.Date >= start && sale.Date <= end)
                 {
 
-                    salesPrice += Functions.CalcSaleCount(sale);
+                    salesPrice += Functions.CalcSaleCost(sale);
 
                 }
             }
@@ -78,19 +78,19 @@ namespace ВременнойРяд
             Console.WriteLine("Самый продаваемый телефон: " + mostSoldPhone);
             Console.WriteLine("Телефон с наименьшим фактом продаж: " + leastSoldPhone);
         }
-        static public int[] FindModelSalesPrice(List<Sale> sales)
+        static public double[] FindModelSalesPrice(List<Sale> sales)
         {
-            int[] result = new int[6];
+            double[] result = new double[6];
             
 
                 foreach (Sale sale in sales)
                 {
-                    if (sale.PhoneModel == "iPhone 13") result[0] += Functions.CalcSaleCount(sale);
-                    if (sale.PhoneModel == "Samsung Galaxy S21") result[1] += Functions.CalcSaleCount(sale);
-                    if (sale.PhoneModel == "iPhone 15") result[2] += Functions.CalcSaleCount(sale);
-                    if (sale.PhoneModel == "Google Pixel 6") result[3] += Functions.CalcSaleCount(sale);
-                    if (sale.PhoneModel == "Samsung Galaxy S22") result[4] += Functions.CalcSaleCount(sale);
-                    if (sale.PhoneModel == "iPhone 14") result[5] += Functions.CalcSaleCount(sale);
+                    if (sale.PhoneModel == "iPhone 13") result[0] += Functions.CalcSaleCost(sale);
+                    if (sale.PhoneModel == "Samsung Galaxy S21") result[1] += Functions.CalcSaleCost(sale);
+                    if (sale.PhoneModel == "iPhone 15") result[2] += Functions.CalcSaleCost(sale);
+                    if (sale.PhoneModel == "Google Pixel 6") result[3] += Functions.CalcSaleCost(sale);
+                    if (sale.PhoneModel == "Samsung Galaxy S22") result[4] += Functions.CalcSaleCost(sale);
+                    if (sale.PhoneModel == "iPhone 14") result[5] += Functions.CalcSaleCost(sale);
 
                 }
             
@@ -100,14 +100,15 @@ namespace ВременнойРяд
         {
             string mostSoldPhone = "";
             string secondMostSoldPhone = "";
-            int max1 = 0;
-            int max2 = 0;
-            int[] price = new int[6];
+            double max1 = 0;
+            double max2 = 0;
+            double[] price = new double[6];
             price = FindModelSalesPrice(sales);
             for (int i = 0; i < 6; i++)
             {
                 if (price[i] > max1)
                 {
+                    max2 = max1;
                     max1 = price[i];
                 }
                 if (price[i] > max2)

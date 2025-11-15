@@ -11,6 +11,6 @@ namespace ВременнойРяд
         public DateTime Date;       //   Дата
         public string PhoneModel;   //   Модель телефона
         public int Quantity;        //   Количество
-        public int Price;           //   Цена
+        public double Price;           //   Цена
     }
 }
