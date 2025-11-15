@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,10 @@ namespace LR2NEWV3
             //По запросу пользователя – «название услуги» - вывести на экран список посетителей,
             //начиная с тех, кто наиболее часто пользуется данной услугой.
             //Подсчитайте среднее количество обращений по данной услуге.
-            
+
+
+
+
 
         }
     }
