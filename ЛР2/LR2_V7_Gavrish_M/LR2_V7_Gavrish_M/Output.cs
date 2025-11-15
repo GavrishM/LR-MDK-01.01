@@ -10,10 +10,9 @@ namespace LR2_V7_Gavrish_M
     {
         public static void List(Dictionary<string, double> list)
         {
-            foreach (var key in list)
+            foreach (var item in list)
             {
-
-                Console.WriteLine(key + " " + list[key]);
+                Console.WriteLine($"{item.Key}: {item.Value}");
             }
         }
     }

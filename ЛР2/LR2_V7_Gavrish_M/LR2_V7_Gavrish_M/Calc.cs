@@ -33,22 +33,17 @@ namespace LR2_V7_Gavrish_M
         }
         public static Dictionary<string, double> SortList(Dictionary<string, double> list)
         {
+            var keys = list.Keys.ToArray();
+            var values = list.Values.ToArray();
+
+            Array.Sort(values, keys);
+            Array.Reverse(keys);
+            Array.Reverse(values);
+
             Dictionary<string, double> result = new Dictionary<string, double>();
-            string[] keys = new string[list.Count];
-            double[] values = new double[list.Count];
-            int index = 0;
-            foreach (var key in list)
+            for (int i = 0; i < keys.Length; i++)
             {
-                keys[index] = key.Key;
-                values[index] = key.Value;
-                index++;
-            }
-            Array.Sort(values, keys); // Сортировка значений
-            Array.Reverse(keys);      // Перевернем массивы чтобы получить сортировку по убыванию
-            Array.Reverse(values);    // ^
-            foreach (var key in keys)
-            {
-                result.Add(key, values[keys[key]]);
+                result.Add(keys[i], values[i]);
             }
             return result;
         }

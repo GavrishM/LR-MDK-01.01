@@ -27,7 +27,5 @@ namespace LR2_V7_Gavrish_M
             }
             return (UserQuery);
         }
-
-
     }
 }
