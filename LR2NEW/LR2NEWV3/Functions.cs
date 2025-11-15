@@ -8,11 +8,12 @@ namespace LR2NEWV3
 {
     class Functions
     {
-        static public string Input(List<Servise> servises) 
+        static public string Input() 
         {
             Console.WriteLine("Введите название услуги:");
             string result = Console.ReadLine();
             return result;
         }
+
     }
 }

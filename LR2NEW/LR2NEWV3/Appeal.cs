@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace LR2NEWV3
 {
-    public struct Client
+    public struct Appeal
     {
-        public string name;
-        public List<Appeal> appeals;
+        public Servise servise;
     }
 }
