@@ -9,6 +9,6 @@ namespace LR2NEWV3
     public struct Client
     {
         public string name;
-        public List<Appeal> appeals;
+        public List<Servise> servises;
     }
 }

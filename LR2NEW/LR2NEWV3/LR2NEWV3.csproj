@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appeal.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="Program.cs" />
