@@ -9,6 +9,6 @@ namespace LR2NEWV3
     public struct Client
     {
         public string Name;
-        public Dictionary<Servise, int> Servises;
+        public Dictionary<string, int> Servises;
     }
 }
