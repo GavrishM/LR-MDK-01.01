@@ -15,7 +15,12 @@ namespace LR2NEWV3
             return result;
         }
 
-        
+        static public void SortClientsByService(List<Client> clients, string serviceName)
+        {
+
+
 
         }
+
+    }
 }

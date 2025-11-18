@@ -62,7 +62,8 @@ namespace LR2NEWV3
             };
             // Получаем запрос от пользователя
             string serviceName = Functions.Input();
-            
+            // Выполняем поиск и вывод результатов
+            Functions.SortClientsByService(clients, serviceName);
         }
     }
 }
