@@ -23,7 +23,15 @@ namespace LR2NEWV3
                 .Where(client => client.Services.ContainsKey(serviceName))
                 .OrderByDescending(client => client.Services[serviceName])
                 .ToList();
-
+            /*
+            foreach (Client client in clients) 
+            {
+                if (client.Services.ContainsKey(serviceName)) 
+                {
+                    clientsWithService.Add(client);
+                }
+            }
+            */
             if (clientsWithService.Count == 0)
             {
                 Console.WriteLine("Услуга " + serviceName + " не найдена ни у одного клиента.");
@@ -38,12 +46,12 @@ namespace LR2NEWV3
             foreach (Client client in clientsWithService)
             {
                 int usageCount = client.Services[serviceName];
-                Console.WriteLine(client.Name + " - использована " + usageCount + " раз(а)");
+                Console.WriteLine(client.Name + ": услуга использована " + usageCount + " раз(а)");
             }
 
             // Подсчитываем среднее количество обращений
             double averageUsage = clientsWithService.Average(client => client.Services[serviceName]);
-            Console.WriteLine($"\nСреднее количество обращений по услуге: {averageUsage:F2}");
+            Console.WriteLine("Среднее количество обращений по услуге: " + averageUsage);
 
         }
 

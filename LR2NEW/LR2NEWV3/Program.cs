@@ -50,13 +50,13 @@ namespace LR2NEWV3
                     }
                 },
                 new Client()
-                {
-                    Name = "Елена",
-                    Services = new Dictionary<string, int>()
-                    {
-                        { "Педикюр", 3 },
-                        { "Маникюр", 1 },
-                        { "Массаж", 2 }
+                {                                                 
+                    Name = "Елена",                              
+                    Services = new Dictionary<string, int>()    
+                    {                                          
+                        { "Педикюр", 3 },                     
+                        { "Маникюр", 1 },                    
+                        { "Массаж", 2 }                     
                     }
                 }
             };
