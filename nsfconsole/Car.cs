@@ -19,8 +19,10 @@ namespace nsfconsole
         {
             speed_ = speed;
         }
-
-
+        public int GetSpeed()
+        {
+            return speed_;
+        }
 
     }
 }
