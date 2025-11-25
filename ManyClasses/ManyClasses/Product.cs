@@ -8,24 +8,24 @@ namespace ManyClasses
 {
     public class Product
     {
-        private string name_;
-        private double price_;
+        private string Name_;
+        private double Price_;
         public void SetName(string name)
         {
-            name_ = name;
+            Name_ = name;
         }
         public string GetName() 
         {
-            return name_;
+            return Name_;
         }
 
         public void SetPrice(double price)
         {
-            price_ = price;
+            Price_ = price;
         }
         public double GetPrice()
         {
-            return price_;
+            return Price_;
         }
     }
 }
