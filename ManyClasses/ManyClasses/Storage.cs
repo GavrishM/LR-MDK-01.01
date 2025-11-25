@@ -10,7 +10,7 @@ namespace ManyClasses
     {
         private int Id_;
         private string Address_;
-        private Dictionary<Product, double> Products_;
+        private Dictionary<Product, double> Products_ = new Dictionary<Product, double>();
 
         public void SetId(int id)
         {
@@ -30,14 +30,25 @@ namespace ManyClasses
             return Address_;
         }
 
-        public void SetProducts(Dictionary<Product, double> products)
+        public void SetProductQuantity(Product product, double quantity)
         {
-            Products_ = products;
+            Products_.Add(product, quantity);
         }
-        public Dictionary<Product, double> GetProducts()
+        public void PrintProductsQuantity()
         {
-            return Products_;
+            foreach(var product in Products_)
+            {
+                Console.WriteLine(product.Key.GetName() + " " + product.Value);
+            }
         }
-
+        public double CalcMoney()
+        {
+            double money = 0;
+            foreach(var product in Products_)
+            {
+                money += product.Key.GetPrice() * product.Value;
+            }
+            return money;
+        }
     }
 }
