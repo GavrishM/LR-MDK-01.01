@@ -21,11 +21,33 @@ namespace ManyClasses
             Storage storage = new Storage();
             storage.SetId(3);
             storage.SetAddress("Торжок, Студенческая 3");
-
             storage.SetProductQuantity(Merc, 2);
             storage.SetProductQuantity(Uaz, 5);
-            storage.PrintProductsQuantity();
-            Console.WriteLine(storage.CalcMoney());
+            //storage.PrintProductsQuantity();
+            //Console.WriteLine(storage.CalcMoney());
+            Report rep1 = new Report();
+            //rep1.SetStorage(storage);
+            //rep1.PrintReport();
+
+            Row row1 = new Row();
+            row1.Product = "сосновая шишка";
+            row1.Price = 2123;
+            row1.Quantity = 3;
+            rep1.AddRow(row1);
+
+            Row row2 = new Row();
+            row2.Product = "кедровая шышка";
+            row2.Price = 2453;
+            row2.Quantity = 87;
+            rep1.AddRow(row2);
+
+            Row row3 = new Row();
+            row3.Product = "еловая шышка";
+            row3.Price = 2433;
+            row3.Quantity = 809;
+            rep1.AddRow(row3);
+
+            Console.WriteLine(rep1.ReportToString());
         }
     }
 }

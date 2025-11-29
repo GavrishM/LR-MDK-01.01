@@ -29,7 +29,10 @@ namespace ManyClasses
         {
             return Address_;
         }
-
+        public Dictionary<Product, double> GetProducts ()
+        { 
+            return Products_;
+        }
         public void SetProductQuantity(Product product, double quantity)
         {
             Products_.Add(product, quantity);
@@ -50,5 +53,19 @@ namespace ManyClasses
             }
             return money;
         }
+        public List<Row> GetRows()
+        {
+            List<Row> rows = new List<Row>();
+            foreach(Product product in Products_.Keys)
+            {
+                Row row = new Row();
+                row.Product = product.GetName();
+                row.Quantity = Products_[product];
+                row.Price = product.GetPrice();
+                rows.Add(row);
+            }
+            return rows;
+        }
+
     }
 }
