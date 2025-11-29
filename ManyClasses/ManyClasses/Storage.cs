@@ -36,17 +36,17 @@ namespace ManyClasses
         }
         public void PrintProductsQuantity()
         {
-            foreach(var product in Products_)
+            foreach (Product product in Products_.Keys)
             {
-                Console.WriteLine(product.Key.GetName() + " " + product.Value);
+                Console.WriteLine(product.GetName() + " " + Products_[product]);
             }
         }
         public double CalcMoney()
         {
             double money = 0;
-            foreach(var product in Products_)
+            foreach (Product product in Products_.Keys)
             {
-                money += product.Key.GetPrice() * product.Value;
+                money += product.GetPrice() * Products_[product];
             }
             return money;
         }
