@@ -24,7 +24,7 @@ namespace ManyClasses
         //        Console.WriteLine(product.GetPrice() + " " + product.GetName() + " " + Products_[product]);
         //    }
         //    Console.WriteLine(Sum_);
-        //}
+        //}//
         private List<Row> Rows_ = new List<Row>();
         private Storage Storage_ = new Storage();
 
