@@ -50,6 +50,7 @@ namespace ManyClasses
             rep1.SetStorage(storage);
             rep1.AddRow();
             Console.WriteLine(rep1.ReportToString());
+            
         }
     }
 }
