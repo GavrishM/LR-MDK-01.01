@@ -52,8 +52,19 @@ namespace Massive_array
                     Array_[i, h] = Convert.ToInt32(Console.ReadLine());
                 }
             }
-            else Console.WriteLine("Ячейка не найдена");
+            else Console.WriteLine("Строка не найдена");
         }
-
+        public void SetArrayColumn(int w)
+        {
+            if (w < Width_)
+            {
+                for (int i = 0; i < Width_; i++)
+                {
+                    Console.WriteLine("Введите значение:");
+                    Array_[w, i] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            else Console.WriteLine("Столбец не найден");
+        }
     }
 }
