@@ -65,6 +65,33 @@ namespace Massive_array
                 }
             }
             else Console.WriteLine("Столбец не найден");
+
+        }
+
+        public int GetArrayCell(int w, int h, int value)
+        {
+            if (w < Width_ && h < Heigth_)
+            {
+                return Array_[w, h];
+            }
+            else
+            {
+                Console.WriteLine("Ячейка не найдена");
+                return 0;            
+            }
+        }
+        public int[] GetArrayRow(int h)
+        {
+            int[] result = new int[Width_];
+            if (h < Heigth_)
+            {
+                for (int i = 0; i < Heigth_; i++)
+                {
+                    result[i] = Array_[i, h];
+                }
+            }
+            else Console.WriteLine("Строка не найдена");
+            return result;
         }
     }
 }
