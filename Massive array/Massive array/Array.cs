@@ -42,5 +42,18 @@ namespace Massive_array
             }
             else Console.WriteLine("Ячейка не найдена");
         }
+        public void SetArrayRow(int h)
+        {
+            if (h < Heigth_)
+            {
+                for (int i = 0; i < Heigth_; i++)
+                {
+                    Console.WriteLine("Введите значение:");
+                    Array_[i, h] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            else Console.WriteLine("Ячейка не найдена");
+        }
+
     }
 }
