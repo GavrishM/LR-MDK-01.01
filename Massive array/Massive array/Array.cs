@@ -34,6 +34,13 @@ namespace Massive_array
             return Width_;
         }
 
-        
+        public void SetArrayCell(int w, int h, int value)
+        {
+            if (w < Width_ && h < Heigth_)
+            {
+                Array_[w, h] = value;
+            }
+            else Console.WriteLine("Ячейка не найдена");
+        }
     }
 }
