@@ -93,5 +93,20 @@ namespace Massive_array
             else Console.WriteLine("Строка не найдена");
             return result;
         }
+        public int[] GetArrayColumn(int w)
+        {
+            int[] result = new int[Heigth_];
+
+            if (w < Width_)
+            {
+                for (int i = 0; i < Heigth_; i++)
+                {
+                    result[i] = Array_[w, i];
+                }
+            }
+            else Console.WriteLine("Столбец не найден");
+            return result;
+        }
+
     }
 }
