@@ -27,7 +27,14 @@ namespace ManyClasses
         //}
         private List<Row> Rows_ = new List<Row>();
         private Storage Storage_ = new Storage();
-
+        public void AddRow()
+        {
+            Rows_.AddRange(Storage_.GetRows());
+        }
+        public void SetStorage(Storage storage)
+        {
+            Storage_ = storage;
+        }
         public void AddRow (Row row)
         {
             Rows_.Add(row);
@@ -40,6 +47,7 @@ namespace ManyClasses
         {
             string report = "";
             double sum = 0;
+            report += ("Склад " + Storage_.GetId() + " " + Storage_.GetAddress() + "\n");
             foreach (Row row in Rows_)
             {
                 report += (row.Price + ";" + row.Product + ";" + row.Quantity + "\n");
