@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35818.85 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Massive array", "Massive array\Massive array.csproj", "{F88D597B-011A-406B-9524-2CF80F1A3D3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassiveArray", "Massive array\MassiveArray.csproj", "{F88D597B-011A-406B-9524-2CF80F1A3D3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Massive_array
 {
-    public class Array
+    public class Array2d
     {
         private int Heigth_;
         private int Width_;
@@ -68,7 +68,7 @@ namespace Massive_array
 
         }
 
-        public int GetArrayCell(int w, int h, int value)
+        public int GetArrayCell(int w, int h)
         {
             if (w < Width_ && h < Heigth_)
             {
@@ -96,7 +96,7 @@ namespace Massive_array
         public int[] GetArrayColumn(int w)
         {
             int[] result = new int[Heigth_];
-
+            
             if (w < Width_)
             {
                 for (int i = 0; i < Heigth_; i++)
