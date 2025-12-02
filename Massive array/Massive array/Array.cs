@@ -107,6 +107,9 @@ namespace Massive_array
             else Console.WriteLine("Столбец не найден");
             return result;
         }
-
+        public int[,] GetArray()
+        {
+            return Array_;
+        }
     }
 }
