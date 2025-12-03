@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public class Triangle : IShape
+    public class Triangle : IShape //Создаем класс для треугольников
     {
         public double SideA { get; set; }
         public double SideB { get; set; }

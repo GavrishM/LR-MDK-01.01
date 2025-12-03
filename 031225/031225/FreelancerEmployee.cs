@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public class FreelancerEmployee : Employee
+    public class FreelancerEmployee : Employee //Создаем класс для сотрудников на фрилансе
     {
         public double SalaryProject;
         public double NDFL;

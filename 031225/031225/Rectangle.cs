@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public class Rectangle : IShape
+    public class Rectangle : IShape //Создаем класс для прямоугольников
     {
         public double Width { get; set; }
         public double Height { get; set; }

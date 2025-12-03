@@ -138,11 +138,11 @@ namespace _031225
         //Продемонстрируйте работу кэша из нескольких потоков.
         //
         //
-        //
+        //Вспоминаем что мы не проходили на 3 курсе наследование классов(,но проходили на 2 курсе), абстрактные классы, интерфейсы, паттерны...
         static void Main(string[] args)
         {
             {
-                FixedSalaryEmployee employee1 = new FixedSalaryEmployee();
+                FixedSalaryEmployee employee1 = new FixedSalaryEmployee(); //Создаем сотрудника с фикс. зп.
                 {
                     employee1.SalaryMounth = 30000;
                     employee1.Mounth = 2;
@@ -151,7 +151,7 @@ namespace _031225
                     employee1.Id = 1;
                     Console.WriteLine(employee1.Id + " " + employee1.FullName + " " + employee1.Email + " " + employee1.CalculateSalary());
                 }
-                HourlySalaryEmployee employee2 = new HourlySalaryEmployee();
+                HourlySalaryEmployee employee2 = new HourlySalaryEmployee(); //Создаем сотрудника с почасовой оплатой
                 {
                     employee2.SalaryHour = 1000;
                     employee2.Hours = 240;
@@ -161,7 +161,7 @@ namespace _031225
                     employee2.Id = 2;
                     Console.WriteLine(employee2.Id + " " + employee2.FullName + " " + employee2.Email + " " + employee2.CalculateSalary());
                 }
-                FreelancerEmployee employee3 = new FreelancerEmployee();
+                FreelancerEmployee employee3 = new FreelancerEmployee(); //Создаем сотрудника на фрилансе
                 {
                     employee3.SalaryProject = 50000;
                     employee3.NDFL = 0.13;
@@ -172,7 +172,7 @@ namespace _031225
                 }
             }//Zadanie 1.1
             {
-                List<IShape> shapes = new List<IShape>
+                List<IShape> shapes = new List<IShape> //Создаем список фигур
                 {
                 new Circle(5),
                 new Rectangle(4, 6),
@@ -181,6 +181,7 @@ namespace _031225
 
                 PerimeterCalculator perimeterCalculator = new PerimeterCalculator();
                 AreaCalculator areaCalculator = new AreaCalculator();
+                //Выводим результат
                 foreach (IShape shape in shapes)
                 {
                     shape.Accept(perimeterCalculator);

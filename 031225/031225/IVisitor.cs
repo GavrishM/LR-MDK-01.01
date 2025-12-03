@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public interface IVisitor
+    public interface IVisitor //Создаем интерфейс посетителя
     {
         void Visit(Circle circle);
         void Visit(Rectangle rectangle);

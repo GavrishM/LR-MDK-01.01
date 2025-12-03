@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public class PerimeterCalculator : IVisitor
+    public class PerimeterCalculator : IVisitor //Создаем класс для вычисления периметра фигур
     {
         public double Perimeter { get; private set; }
 

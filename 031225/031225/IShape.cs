@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public interface IShape
+    public interface IShape //Создаем интерфейс фигур
     {
         void Accept(IVisitor visitor);
     }

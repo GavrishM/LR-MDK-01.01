@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public class HourlySalaryEmployee : Employee
+    public class HourlySalaryEmployee : Employee //Создаем класс для сотрудников с почасовой оплатой
     {
         public double SalaryHour;
         public int Hours;

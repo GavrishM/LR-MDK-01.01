@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public class Circle : IShape
+    public class Circle : IShape //Создаем класс для кругов
     {
         public double Radius { get; set; }
         public Circle(double radius) => Radius = radius;

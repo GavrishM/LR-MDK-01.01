@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public class FixedSalaryEmployee : Employee
+    public class FixedSalaryEmployee : Employee //Создаем класс для сотрудников с фиксированной зарплатой в месяц
     {
         public double SalaryMounth;
         public int Mounth;

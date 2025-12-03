@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public class AreaCalculator : IVisitor
+    public class AreaCalculator : IVisitor //Создаем класс для вычисления площади фигур
     {
         public double Area { get; private set; }
 

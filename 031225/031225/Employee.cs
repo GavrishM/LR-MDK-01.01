@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _031225
 {
-    public abstract class Employee
+    public abstract class Employee //Создаем абстрактный класс для сотрудников
     {
         public int Id;
         public string FullName;
