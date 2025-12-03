@@ -111,7 +111,8 @@ namespace _031225
         //3.Самые популярные ресурсы(URL) за день.
         //4.Общий трафик, сгенерированный каждым HTTP-методом (GET, POST).
         //5.Поиск подозрительной активности: IP-адреса,
-        //которые за короткий промежуток времени (10 мин) получили много(например, >100) ошибок 4xx(возможная попытка сканирования).
+        //которые за короткий промежуток времени (10 мин)
+        //получили много(например, >100) ошибок 4xx(возможная попытка сканирования).
         //Доп.сложность: Реализуйте кеширование результатов тяжелых агрегаций с использованием `MemoryCache`.
         //
         //Категория 5: Многопоточность и асинхронность(введение)
@@ -140,35 +141,54 @@ namespace _031225
         //
         static void Main(string[] args)
         {
-            FixedSalaryEmployee employee1 = new FixedSalaryEmployee();
             {
-                employee1.SalaryMounth = 30000;
-                employee1.Mounth = 2;
-                employee1.FullName = "Test";
-                employee1.Email = "tseT";
-                employee1.Id = 1;
-                Console.WriteLine(employee1.Id + " " + employee1.FullName + " " + employee1.Email + " " + employee1.CalculateSalary());
-            }
-            HourlySalaryEmployee employee2 = new HourlySalaryEmployee();
+                FixedSalaryEmployee employee1 = new FixedSalaryEmployee();
+                {
+                    employee1.SalaryMounth = 30000;
+                    employee1.Mounth = 2;
+                    employee1.FullName = "Test";
+                    employee1.Email = "tseT";
+                    employee1.Id = 1;
+                    Console.WriteLine(employee1.Id + " " + employee1.FullName + " " + employee1.Email + " " + employee1.CalculateSalary());
+                }
+                HourlySalaryEmployee employee2 = new HourlySalaryEmployee();
+                {
+                    employee2.SalaryHour = 1000;
+                    employee2.Hours = 240;
+                    employee2.Overtime = 10;
+                    employee2.FullName = "Oleg";
+                    employee2.Email = "oleg";
+                    employee2.Id = 2;
+                    Console.WriteLine(employee2.Id + " " + employee2.FullName + " " + employee2.Email + " " + employee2.CalculateSalary());
+                }
+                FreelancerEmployee employee3 = new FreelancerEmployee();
+                {
+                    employee3.SalaryProject = 50000;
+                    employee3.NDFL = 0.13;
+                    employee3.FullName = "Igor";
+                    employee3.Email = "rogI";
+                    employee3.Id = 3;
+                    Console.WriteLine(employee3.Id + " " + employee3.FullName + " " + employee3.Email + " " + employee3.CalculateSalary());
+                }
+            }//Zadanie 1.1
             {
-                employee2.SalaryHour = 1000;
-                employee2.Hours = 240;
-                employee2.Overtime = 10;
-                employee2.FullName = "Oleg";
-                employee2.Email = "oleg";
-                employee2.Id = 2;
-                Console.WriteLine(employee2.Id + " " + employee2.FullName + " " + employee2.Email + " " + employee2.CalculateSalary());
-            }
-            FreelancerEmployee employee3 = new FreelancerEmployee();
-            {
-                employee3.SalaryProject = 50000;
-                employee3.NDFL = 0.13;
-                employee3.FullName = "Igor";
-                employee3.Email = "rogI";
-                employee3.Id = 3;
-                Console.WriteLine(employee3.Id + " " + employee3.FullName + " " + employee3.Email + " " + employee3.CalculateSalary());
-            }
+                List<IShape> shapes = new List<IShape>
+                {
+                new Circle(5),
+                new Rectangle(4, 6),
+                new Triangle(3, 4, 5)
+                };
 
+                PerimeterCalculator perimeterCalculator = new PerimeterCalculator();
+                AreaCalculator areaCalculator = new AreaCalculator();
+                foreach (IShape shape in shapes)
+                {
+                    shape.Accept(perimeterCalculator);
+                    shape.Accept(areaCalculator);
+                    Console.WriteLine($"Периметр фигуры: {perimeterCalculator.Perimeter} Площадь фигуры: {areaCalculator.Area}");
+                }
+
+            }//Zadanie 1.2
         }
     }
 }
