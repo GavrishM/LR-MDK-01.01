@@ -12,12 +12,12 @@ namespace LR3
 {
     public partial class MainForm : Form
     {
-        List<MedicineGroup> catalog = new List<MedicineGroup>();
-        public MedicineGroup coughMedicine = new MedicineGroup("Лекарства от кашля", new List<Medicine>());
-
+        public List<MedicineGroup> catalog = new List<MedicineGroup>();
         public MainForm()
         {
             InitializeComponent();
+            List<Medicine> coughMedicineList = new List<Medicine>();
+            MedicineGroup coughMedicine = new MedicineGroup("Лекарства от кашля", coughMedicineList);
         }
     }
 }
