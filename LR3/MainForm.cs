@@ -27,12 +27,9 @@ namespace LR3
         производителе, сроке годности и поставщике. Для каждого выбранного компонента можно указать количество заказываемого.
         По нажатию на кнопку «Заказать» формируется вывод текста на форму с перечнем номенклатурных групп и количеством заказываемых препаратов для каждой группы.
          */
-        public List<MedicineGroup> catalog = new List<MedicineGroup>();
         public MainForm()
         {
             InitializeComponent();
-            List<Medicine> coughMedicineList = new List<Medicine>();
-            MedicineGroup coughMedicine = new MedicineGroup("Лекарства от кашля", coughMedicineList);
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LR3
 {
-    public class Medicine : MedicineGroup
+    public class Medicine
     {
         private string name_;
         private string image_;
