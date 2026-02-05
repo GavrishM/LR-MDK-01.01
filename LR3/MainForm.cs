@@ -29,9 +29,26 @@ namespace LR3
         По нажатию на кнопку «Заказать» формируется вывод текста на форму с перечнем номенклатурных групп и
         количеством заказываемых препаратов для каждой группы.
          */
+        Dictionary<string, List<Medicine>> medicineGroupList = new Dictionary<string, List<Medicine>>();
         public MainForm()
         {
             InitializeComponent();
+
+        }
+
+        private void GroupListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MedicineComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrderButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

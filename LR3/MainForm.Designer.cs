@@ -97,6 +97,7 @@
             this.GroupListBox.Name = "GroupListBox";
             this.GroupListBox.Size = new System.Drawing.Size(166, 450);
             this.GroupListBox.TabIndex = 0;
+            this.GroupListBox.SelectedIndexChanged += new System.EventHandler(this.GroupListBox_SelectedIndexChanged);
             // 
             // MedicineComboBox
             // 
@@ -106,6 +107,7 @@
             this.MedicineComboBox.Name = "MedicineComboBox";
             this.MedicineComboBox.Size = new System.Drawing.Size(199, 21);
             this.MedicineComboBox.TabIndex = 0;
+            this.MedicineComboBox.SelectedIndexChanged += new System.EventHandler(this.MedicineComboBox_SelectedIndexChanged);
             // 
             // OrderButton
             // 
@@ -116,10 +118,12 @@
             this.OrderButton.TabIndex = 1;
             this.OrderButton.Text = "Заказать";
             this.OrderButton.UseVisualStyleBackColor = true;
+            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 
             // MedicineTextBox
             // 
             this.MedicineTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MedicineTextBox.Enabled = false;
             this.MedicineTextBox.Location = new System.Drawing.Point(0, 21);
             this.MedicineTextBox.Multiline = true;
             this.MedicineTextBox.Name = "MedicineTextBox";
