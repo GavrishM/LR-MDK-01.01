@@ -16,6 +16,17 @@ namespace LR3
         private string expirationDate_;
         private string decription_;
 
+        public Medicine (string name, string image, double cost, string manufacturer, string supplier, string expirationDate, string description)
+        {
+            this.name_ = name;
+            this.image_ = image;
+            this.cost_ = cost;
+            this.manufacturer_ = manufacturer;
+            this.supplier_ = supplier;
+            this.expirationDate_ = expirationDate;
+            this.decription_ = description;
+        }
+
         public string Name
         {
             get { return name_; }
