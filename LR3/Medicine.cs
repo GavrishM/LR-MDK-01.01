@@ -14,7 +14,7 @@ namespace LR3
         private string manufacturer_;
         private string supplier_;
         private string expirationDate_;
-        private string decription_;
+        private string description_;
 
         public Medicine (string name, string image, double cost, string manufacturer, string supplier, string expirationDate, string description)
         {
@@ -24,7 +24,7 @@ namespace LR3
             this.manufacturer_ = manufacturer;
             this.supplier_ = supplier;
             this.expirationDate_ = expirationDate;
-            this.decription_ = description;
+            this.description_ = description;
         }
 
         public string Name
@@ -57,10 +57,10 @@ namespace LR3
             get { return expirationDate_; }
             set { expirationDate_ = value; }
         }
-        public string Decription
+        public string Description
         {
-            get { return decription_; }
-            set { decription_ = value; }
+            get { return description_; }
+            set { description_ = value; }
         }
 
     }

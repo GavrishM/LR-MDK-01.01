@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,21 +34,25 @@ namespace LR3
         public MainForm()
         {
             InitializeComponent();
-            List<Medicine> inputList = new List<Medicine>();
-            inputList.Add(new Medicine("Амброксол", "\\Image\\Амброксол.webp", 47, "ООО Амброксол", "ООО Амброксол", "15 недель", "Лекарство от кашля (таблетки)"));
-            inputList.Add(new Medicine("Коделак", "\\Image\\Коделак.webp", 32, "ООО Коделак", "ООО Коделак", "4 недели", "Лекарство от кашля (сироп)"));
+            //string path = Path.Combine(Application.StartupPath, "Image", "Амброксол.jpg");
+            List <Medicine> inputList = new List<Medicine>();
+            inputList.Add(new Medicine("Амброксол", "\\Image\\Амброксол.jpg", 47, "ООО Амброксол", "ООО Амброксол", "15 недель", "Лекарство от кашля (таблетки)"));
+            inputList.Add(new Medicine("Коделак", "\\Image\\Коделак.jpg", 32, "ООО Коделак", "ООО Коделак", "4 недели", "Лекарство от кашля (сироп)"));
             medicineGroupList.Add("Лекарства от кашля", inputList);
             inputList.Clear();
-            inputList.Add(new Medicine("Терафлю", "\\Image\\Терафлю.webp", 68, "ООО Терафлю", "ООО Терафлю", "2 недели", "Жаропонижающее (пакетики)"));
-            inputList.Add(new Medicine("Nurofen", "\\Image\\Nurofen.webp", 89, "ООО Nurofen", "ООО Nurofen", "15 недель", "Жаропонижающее (таблетки)"));
+            inputList.Add(new Medicine("Терафлю", "\\Image\\Терафлю.jpg", 68, "ООО Терафлю", "ООО Терафлю", "2 недели", "Жаропонижающее (пакетики)"));
+            inputList.Add(new Medicine("Nurofen", "\\Image\\Nurofen.jpg", 89, "ООО Nurofen", "ООО Nurofen", "15 недель", "Жаропонижающее (таблетки)"));
             medicineGroupList.Add("Жаропонижающие", inputList);
             inputList.Clear();
-            //GroupListBox.Items.AddRange(medicineGroupList.Keys.ToList<string>());
+            GroupListBox.DataSource = medicineGroupList.Keys.ToList();
+            //MainPictureBox.Image = Image.FromFile(path);
         }
 
         private void GroupListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            List<Medicine> medicines = medicineGroupList[GroupListBox.SelectedItem.ToString()].ToList();
+            List<string> inputList = medicines.Select(m => m.Name).ToList();
+            MedicineComboBox.DataSource = inputList;
         }
 
         private void MedicineComboBox_SelectedIndexChanged(object sender, EventArgs e)
