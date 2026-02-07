@@ -34,18 +34,17 @@ namespace LR3
         public MainForm()
         {
             InitializeComponent();
-            //string path = Path.Combine(Application.StartupPath, "Image", "Амброксол.jpg");
+            string path = Path.Combine(Application.StartupPath, "Image", "Амброксол.jpg");
             List <Medicine> inputList = new List<Medicine>();
             inputList.Add(new Medicine("Амброксол", "\\Image\\Амброксол.jpg", 47, "ООО Амброксол", "ООО Амброксол", "15 недель", "Лекарство от кашля (таблетки)"));
             inputList.Add(new Medicine("Коделак", "\\Image\\Коделак.jpg", 32, "ООО Коделак", "ООО Коделак", "4 недели", "Лекарство от кашля (сироп)"));
             medicineGroupList.Add("Лекарства от кашля", inputList);
-            inputList.Clear();
-            inputList.Add(new Medicine("Терафлю", "\\Image\\Терафлю.jpg", 68, "ООО Терафлю", "ООО Терафлю", "2 недели", "Жаропонижающее (пакетики)"));
-            inputList.Add(new Medicine("Nurofen", "\\Image\\Nurofen.jpg", 89, "ООО Nurofen", "ООО Nurofen", "15 недель", "Жаропонижающее (таблетки)"));
-            medicineGroupList.Add("Жаропонижающие", inputList);
-            inputList.Clear();
+            List<Medicine> inputList2 = new List<Medicine>();
+            inputList2.Add(new Medicine("Терафлю", "\\Image\\Терафлю.jpg", 68, "ООО Терафлю", "ООО Терафлю", "2 недели", "Жаропонижающее (пакетики)"));
+            inputList2.Add(new Medicine("Nurofen", "\\Image\\Nurofen.jpg", 89, "ООО Nurofen", "ООО Nurofen", "15 недель", "Жаропонижающее (таблетки)"));
+            medicineGroupList.Add("Жаропонижающие", inputList2);
             GroupListBox.DataSource = medicineGroupList.Keys.ToList();
-            //MainPictureBox.Image = Image.FromFile(path);
+            //MainPictureBox.Image = Image.FromFile(path);2.
         }
 
         private void GroupListBox_SelectedIndexChanged(object sender, EventArgs e)
