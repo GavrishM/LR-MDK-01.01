@@ -34,9 +34,9 @@ namespace LR3
         public MainForm()
         {
             InitializeComponent();
-            string path = Path.Combine(Application.StartupPath, "Image", "Амброксол.jpg");
+            string path = Path.Combine(Application.StartupPath, "Image", "Ambroxol.jpg");
             List <Medicine> inputList = new List<Medicine>();
-            inputList.Add(new Medicine("Амброксол", "\\Image\\Амброксол.jpg", 47, "ООО Амброксол", "ООО Амброксол", "15 недель", "Лекарство от кашля (таблетки)"));
+            inputList.Add(new Medicine("Амброксол", "\\Image\\Ambroxol.jpg", 47, "ООО Амброксол", "ООО Амброксол", "15 недель", "Лекарство от кашля (таблетки)"));
             inputList.Add(new Medicine("Коделак", "\\Image\\Коделак.jpg", 32, "ООО Коделак", "ООО Коделак", "4 недели", "Лекарство от кашля (сироп)"));
             medicineGroupList.Add("Лекарства от кашля", inputList);
             List<Medicine> inputList2 = new List<Medicine>();
@@ -44,7 +44,7 @@ namespace LR3
             inputList2.Add(new Medicine("Nurofen", "\\Image\\Nurofen.jpg", 89, "ООО Nurofen", "ООО Nurofen", "15 недель", "Жаропонижающее (таблетки)"));
             medicineGroupList.Add("Жаропонижающие", inputList2);
             GroupListBox.DataSource = medicineGroupList.Keys.ToList();
-            //MainPictureBox.Image = Image.FromFile(path);2.
+          //MainPictureBox.Image = Image.FromFile(path); //Ошибка аут оф мемори
         }
 
         private void GroupListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,10 +53,20 @@ namespace LR3
             List<string> inputList = medicines.Select(m => m.Name).ToList();
             MedicineComboBox.DataSource = inputList;
         }
-
+        //jljljljljljljljljljljljljljljljljljljljljlj
         private void MedicineComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            List<Medicine> medicines = medicineGroupList[GroupListBox.SelectedItem.ToString()].ToList();
+            Medicine med = medicines[MedicineComboBox.SelectedIndex];
 
+            string result = "Название: " + med.Name + "\n" +
+                "Цена: " + med.Cost + "\n" +
+                "Производитель: " + med.Manufacturer + "\n" +
+                "Поставщик: " + med.Supplier + "\n" +
+                "Срок годности: " + med.ExpirationDate + "\n" +
+                "Описание: " + med.Description;
+
+            MedicineTextBox.Text = result;
         }
 
         private void OrderButton_Click(object sender, EventArgs e)
