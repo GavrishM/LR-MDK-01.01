@@ -9,7 +9,7 @@ namespace TestFileStorage
     interface IUserInterface
     {
         List<User> Load();
-        void Registration();
-        void CheckLogin();
+        void Registration(string login, string password);
+        void CheckLogin(string login);
     }
 }

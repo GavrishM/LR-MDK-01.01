@@ -16,6 +16,9 @@ namespace TestFileStorage
         {
             InitializeComponent();
         }
+
+        //--------------
+
         private void AuthorizationButton_Click(object sender, EventArgs e)
         {
             List<User> users = new List<User>();
@@ -31,6 +34,9 @@ namespace TestFileStorage
             }
             MessageBox.Show("Пароль введён неверно");
         }
+        
+        //--------------
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             FileUsersStorage UserInformation = new FileUsersStorage();

@@ -24,13 +24,33 @@ namespace TestFileStorage
             }
             return result;
         }
-        public void Registration() 
+        public void Registration(string login, string password) 
         {
-        
+
+            string path = Path.Combine(Application.StartupPath, "Passwords.txt");
+            
         }
-        public void CheckLogin() 
+        public void CheckLogin(string login) 
         {
-        
+            bool result = false;
+            string path = Path.Combine(Application.StartupPath, "Passwords.txt");
+            StreamReader Sr = new StreamReader(path);
+            string line;
+            while ((line = Sr.ReadLine()) != null)
+            {
+                string[] UserInformation = line.Split('-');
+                User user = new User(UserInformation[0], UserInformation[1]);
+                if (UserInformation[0] == login)
+                {
+
+
+                }
+                result.Add(user);
+
+
+
+            }
+
         }
 
     }
