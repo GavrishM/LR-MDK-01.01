@@ -68,7 +68,7 @@ namespace LR3
 
             MedicineTextBox.Text = result;
         }
-
+        //
         private void OrderButton_Click(object sender, EventArgs e)
         {
 
