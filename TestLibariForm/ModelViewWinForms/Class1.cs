@@ -8,5 +8,6 @@ namespace ModelViewWinForms
 {
     public class Class1
     {
+        //
     }
 }
