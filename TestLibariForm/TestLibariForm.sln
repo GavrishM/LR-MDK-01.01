@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLibariForm", "TestLibariForm\TestLibariForm.csproj", "{18621E40-91BD-419F-805C-72CAC6E2B76C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelViewWinForms", "ModelViewWinForms\ModelViewWinForms.csproj", "{8933C4A4-664A-48B3-969D-7EECF1094B44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelViewLib", "ModelViewWinForms\ModelViewLib.csproj", "{8933C4A4-664A-48B3-969D-7EECF1094B44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -76,5 +76,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModelViewWinForms\ModelViewLib.csproj">
+      <Project>{8933c4a4-664a-48b3-969d-7eecf1094b44}</Project>
+      <Name>ModelViewLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
