@@ -11,5 +11,6 @@ namespace ModelViewWinForms.Views
     {
         void ShowUsers(List<User> users);
 
+        List<User> GetSelectedUsers();
     }
 }

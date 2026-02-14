@@ -12,6 +12,6 @@ namespace ModelViewWinForms.Model
         List<User> Load();
 
         bool Registration(User user);
-        
+        void Remove(List<User> users);
     }
 }

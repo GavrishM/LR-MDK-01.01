@@ -11,18 +11,25 @@ using ModelViewWinForms.Models;
 using ModelViewWinForms.Presenters;
 using ModelViewWinForms.Views;
 using ModelViewWinForms.ModelViews;
+using ModelViewWinForms.Model;
 
 namespace TestLibariForm
 {
     public partial class MainForm: Form
     {
+        IUsersModel model_ = new MemoryUsersModel();
+        UsersPresenter presenter_;
         public MainForm()
         {
             InitializeComponent();
-            UsersTableView usersTable = new UsersTableView();
-            usersTable.Dock = DockStyle.Top;
-            Controls.Add(usersTable);
-            UserPresenter presenter = new UserPresenter(new MemoryUsersModel(), usersTable);
+
+            UsersPresenter presenter = new UsersPresenter(new MemoryUsersModel(), UsersTable);
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            List<User> selectedUsers = UsersView.GetSelectedUsers;
+            presenter_.Remove(selectedUsers);
         }
     }
 }

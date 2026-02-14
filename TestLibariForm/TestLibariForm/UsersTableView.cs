@@ -14,17 +14,19 @@ namespace TestLibariForm
         public void ShowUsers(List<User> users)
         {
             DataSource = users;
-            /*
-            string temp; //Переменная временно заменяющая таблицу
-            int index = 0;
-            foreach(User user in users)
+        }
+        public List<User> GetSelectedUsers() 
+        {
+            List<User> result = new List<User>();
+            foreach (var row in SelectedRows)
             {
-                temp = user.Login;
-                temp = user.Pasword;
-                temp = user.Name;
-                index++;
+                result.Add(row as User);
             }
-            */
+            return result;
+        }
+        public void Remove() 
+        {
+        
         }
     }
 }

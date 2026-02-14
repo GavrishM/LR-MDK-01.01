@@ -29,6 +29,13 @@ namespace ModelViewWinForms.Models
             }
             return result;
         }
+        public void Remove(List<User> users)
+        {
+            foreach (User user in users_)
+            {
+                users_.Remove(user);
+            }
+        }
         public MemoryUsersModel(List<User> users)
         {
             users_ = users;

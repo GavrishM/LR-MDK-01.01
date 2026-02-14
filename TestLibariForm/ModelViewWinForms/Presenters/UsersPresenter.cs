@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace ModelViewWinForms.Presenters
 {
-    public class UserPresenter
+    public class UsersPresenter
     {
         private IUsersModel model_;
         private IUsersView view_;
-        public UserPresenter(IUsersModel modelInterface, IUsersView viewInterface)
+        public UsersPresenter(IUsersModel modelInterface, IUsersView viewInterface)
         {
             model_ = modelInterface;
             view_ = viewInterface;
-            view_.ShowUsers(
-                model_.Load());
+
+            view_.ShowUsers(model_.Load());
         }
        
     }
