@@ -31,9 +31,11 @@ namespace ModelViewWinForms.Models
         }
         public void Remove(List<User> users)
         {
+            int selectedIndex = 0;
+
             foreach (User user in users_)
             {
-
+                
                 users_.Remove(user);
             }
         }

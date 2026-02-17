@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainToolStrip = new System.Windows.Forms.ToolStrip();
             this.RemoveButton = new System.Windows.Forms.ToolStripButton();
+            this.AddButton = new System.Windows.Forms.ToolStripButton();
             this.UsersTable = new TestLibariForm.UsersTableView();
             this.MainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersTable)).BeginInit();
@@ -39,6 +40,7 @@
             // MainToolStrip
             // 
             this.MainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddButton,
             this.RemoveButton});
             this.MainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.MainToolStrip.Name = "MainToolStrip";
@@ -56,6 +58,18 @@
             this.RemoveButton.Size = new System.Drawing.Size(36, 36);
             this.RemoveButton.Text = "RemoveButton";
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            // 
+            // AddButton
+            // 
+            this.AddButton.AutoSize = false;
+            this.AddButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
+            this.AddButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AddButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(36, 36);
+            this.AddButton.Text = "Добавить пользователя";
+            this.AddButton.ToolTipText = "Добавляет пользователя";
             // 
             // UsersTable
             // 
@@ -89,6 +103,7 @@
         private System.Windows.Forms.ToolStrip MainToolStrip;
         private System.Windows.Forms.ToolStripButton RemoveButton;
         private UsersTableView UsersTable;
+        private System.Windows.Forms.ToolStripButton AddButton;
     }
 }
 
