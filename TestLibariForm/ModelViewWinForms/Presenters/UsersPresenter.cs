@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ModelViewWinForms.ModelViews;
 
 namespace ModelViewWinForms.Presenters
 {
@@ -18,6 +19,10 @@ namespace ModelViewWinForms.Presenters
             view_ = viewInterface;
 
             view_.ShowUsers(model_.Load());
+        }
+        public void Remove(List<User> selectedUsers) 
+        {
+            model_.Remove(selectedUsers);
         }
        
     }

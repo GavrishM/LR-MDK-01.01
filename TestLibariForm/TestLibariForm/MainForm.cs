@@ -15,6 +15,7 @@ using ModelViewWinForms.Model;
 
 namespace TestLibariForm
 {
+    //Доделать кнопку удалить и сделать кнопку добавить(вызывает форму с полями для ввода значений и кнопками Y\N)
     public partial class MainForm: Form
     {
         IUsersModel model_ = new MemoryUsersModel();
@@ -24,11 +25,13 @@ namespace TestLibariForm
             InitializeComponent();
 
             UsersPresenter presenter = new UsersPresenter(new MemoryUsersModel(), UsersTable);
+            presenter_ = presenter;
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            List<User> selectedUsers = UsersView.GetSelectedUsers;
+            List<User> selectedUsers = new List<User>();
+            selectedUsers.AddRange(UsersTable.GetSelectedUsers());
             presenter_.Remove(selectedUsers);
         }
     }

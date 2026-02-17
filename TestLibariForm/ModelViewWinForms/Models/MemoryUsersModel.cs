@@ -33,6 +33,7 @@ namespace ModelViewWinForms.Models
         {
             foreach (User user in users_)
             {
+
                 users_.Remove(user);
             }
         }

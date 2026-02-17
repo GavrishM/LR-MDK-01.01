@@ -13,6 +13,7 @@ namespace TestLibariForm
     {
         public void ShowUsers(List<User> users)
         {
+            DataSource = null;
             DataSource = users;
         }
         public List<User> GetSelectedUsers() 
