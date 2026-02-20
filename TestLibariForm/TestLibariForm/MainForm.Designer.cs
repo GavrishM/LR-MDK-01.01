@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainToolStrip = new System.Windows.Forms.ToolStrip();
-            this.RemoveButton = new System.Windows.Forms.ToolStripButton();
             this.AddButton = new System.Windows.Forms.ToolStripButton();
+            this.RemoveButton = new System.Windows.Forms.ToolStripButton();
             this.UsersTable = new TestLibariForm.UsersTableView();
             this.MainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersTable)).BeginInit();
@@ -48,17 +48,6 @@
             this.MainToolStrip.TabIndex = 0;
             this.MainToolStrip.Text = "toolStrip1";
             // 
-            // RemoveButton
-            // 
-            this.RemoveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RemoveButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveButton.Image")));
-            this.RemoveButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.RemoveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(36, 36);
-            this.RemoveButton.Text = "RemoveButton";
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
-            // 
             // AddButton
             // 
             this.AddButton.AutoSize = false;
@@ -70,6 +59,18 @@
             this.AddButton.Size = new System.Drawing.Size(36, 36);
             this.AddButton.Text = "Добавить пользователя";
             this.AddButton.ToolTipText = "Добавляет пользователя";
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.RemoveButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveButton.Image")));
+            this.RemoveButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RemoveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(36, 36);
+            this.RemoveButton.Text = "RemoveButton";
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // UsersTable
             // 

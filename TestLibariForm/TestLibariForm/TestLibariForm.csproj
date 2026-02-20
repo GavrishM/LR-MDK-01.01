@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUserForm.Designer.cs">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,9 @@
     <Compile Include="UsersTableView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="AddUserForm.resx">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

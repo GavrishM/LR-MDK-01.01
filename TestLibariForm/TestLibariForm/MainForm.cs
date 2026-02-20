@@ -24,8 +24,12 @@ namespace TestLibariForm
         {
             InitializeComponent();
 
-            UsersPresenter presenter = new UsersPresenter(new MemoryUsersModel(), UsersTable);
-            presenter_ = presenter;
+            presenter_ = new UsersPresenter(new MemoryUsersModel(
+                                            new List<User> {
+                                                new User("login1", "pasword1", "name1"),
+                                                new User("login2", "pasword2", "name2"),
+                                                new User("login3", "pasword3", "name3")
+                                            }), UsersTable);
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -33,6 +37,11 @@ namespace TestLibariForm
             List<User> selectedUsers = new List<User>();
             selectedUsers.AddRange(UsersTable.GetSelectedUsers());
             presenter_.Remove(selectedUsers);
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ModelViewWinForms.Models
 {
     public class MemoryUsersModel : IUsersModel
@@ -32,11 +33,10 @@ namespace ModelViewWinForms.Models
         public void Remove(List<User> users)
         {
             int selectedIndex = 0;
-
-            foreach (User user in users_)
+            foreach (User user in users)
             {
-                
-                users_.Remove(user);
+                selectedIndex = users_.IndexOf(user);
+                users_.RemoveAt(selectedIndex);
             }
         }
         public MemoryUsersModel(List<User> users)
