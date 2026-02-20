@@ -24,12 +24,7 @@ namespace TestLibariForm
         {
             InitializeComponent();
 
-            presenter_ = new UsersPresenter(new MemoryUsersModel(
-                                            new List<User> {
-                                                new User("login1", "pasword1", "name1"),
-                                                new User("login2", "pasword2", "name2"),
-                                                new User("login3", "pasword3", "name3")
-                                            }), UsersTable);
+            presenter_ = new UsersPresenter(new MemoryUsersModel(), UsersTable);
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -41,7 +36,7 @@ namespace TestLibariForm
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-
+            //Application.Run(new AddUserForm());
         }
     }
 }
