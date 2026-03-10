@@ -33,7 +33,7 @@ namespace ChartTest
             angular.TicksForeground = Brushes.Gray;
             angular.NeedleFill = Brushes.DarkBlue;
         }
-
+        
         void FillSolid()
         {
             solid.From = 0;

@@ -63,6 +63,22 @@ namespace SalesLibrary.Models
                     new Sale {Time = new System.DateTime(2026, 2, 10), Count = 2 },
                     new Sale {Time = new System.DateTime(2026, 3, 1), Count = 35 },
                });
+            AddSales(new Item { Name = "Пряник мятный", Price = 400 },
+                new List<Sale>() {
+                    new Sale {Time = new System.DateTime(2026, 2, 1), Count = 15 } ,
+                    new Sale {Time = new System.DateTime(2026, 2, 2), Count = 25 },
+                    new Sale {Time = new System.DateTime(2026, 2, 3), Count = 31 },
+                    new Sale {Time = new System.DateTime(2026, 2, 10), Count = 2 },
+                    new Sale {Time = new System.DateTime(2026, 3, 1), Count = 35 },
+               });
+            AddSales(new Item { Name = "Снежок термостатный", Price = 99 },
+                new List<Sale>() {
+                    new Sale {Time = new System.DateTime(2026, 2, 1), Count = 100 } ,
+                    new Sale {Time = new System.DateTime(2026, 2, 2), Count = 25 },
+                    new Sale {Time = new System.DateTime(2026, 2, 3), Count = 20 },
+                    new Sale {Time = new System.DateTime(2026, 2, 10), Count = 27 },
+                    new Sale {Time = new System.DateTime(2026, 3, 1), Count = 35 },
+               });
 
             return true;
         }
