@@ -42,39 +42,28 @@ namespace ChartTest
         }
         void FillPie()
         {
-            List<Item> items = presenter_.GetAllItems();
-
-            double zef = ProfitAnalyzer.CalculateProfitPercentByItem("Зефирка Воздушная", presenter_.GetModel());
-            double candy = ProfitAnalyzer.CalculateProfitPercentByItem("Конфетки Заоблачные", presenter_.GetModel());
-            int temp = Convert.ToInt32(zef * 100);
-            zef = temp / 100;
-            temp = Convert.ToInt32(candy * 100);
-            candy = temp / 100;
-
             Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
-            SeriesCollection piechartData = new SeriesCollection
+            SeriesCollection piechartData = new SeriesCollection();
+            double price;
+            int temp;
+            List<Item> items = presenter_.GetAllItems();
+            foreach (Item item in items)
             {
-                new PieSeries
+                temp = Convert.ToInt32(ProfitAnalyzer.CalculateProfitPercentByItem(item.Name, presenter_.GetModel()) * 100);
+                price = temp / 100;
+               
+                piechartData.Add(new PieSeries
                 {
-                    Title = "Зефирки",
-                    Values = new ChartValues<double> { zef },
+                    Title = item.Name,
+                    Values = new ChartValues<double> { price },
                     DataLabels = true,
-                    LabelPoint = labelPoint,
-                    Fill = System.Windows.Media.Brushes.Blue
-                },
-                new PieSeries
-                {
-                    Title = "Конфеты",
-                    Values = new ChartValues<double> { candy },
-                    DataLabels = true,
-                    LabelPoint = labelPoint,
-                    Fill = System.Windows.Media.Brushes.Red
-                }
-            };
+                    LabelPoint = labelPoint
+                });               
+            }
             pie.Dock = DockStyle.Fill;
             pie.Series.Clear();
             pie.Series = piechartData;
-            pie.LegendLocation = LegendLocation.Bottom;
+            pie.LegendLocation = LegendLocation.Bottom;             
         }
         public MainForm()
         {
