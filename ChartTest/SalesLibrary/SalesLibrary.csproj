@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Analysis\ProfitAnalyzer.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Models\Init.cs" />
     <Compile Include="Models\SalesModel.cs" />
     <Compile Include="Presenters\SalesPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

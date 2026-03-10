@@ -15,6 +15,7 @@ namespace ChartTest
     public partial class MainForm : Form
     {
         private SalesPresenter presenter_;
+        
         void FillCartesianChart()
         {
             ItemsList.DataSource = presenter_.GetAllItems();
