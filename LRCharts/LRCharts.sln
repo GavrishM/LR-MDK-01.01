@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36127.28 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LRCharts", "LRCharts\LRCharts.csproj", "{00302E6F-969B-4397-8996-A5022DC276FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{C56807E2-71F4-42A6-88DA-99CBC3C4F04D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00302E6F-969B-4397-8996-A5022DC276FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00302E6F-969B-4397-8996-A5022DC276FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00302E6F-969B-4397-8996-A5022DC276FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00302E6F-969B-4397-8996-A5022DC276FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56807E2-71F4-42A6-88DA-99CBC3C4F04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56807E2-71F4-42A6-88DA-99CBC3C4F04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56807E2-71F4-42A6-88DA-99CBC3C4F04D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56807E2-71F4-42A6-88DA-99CBC3C4F04D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C46D8888-D96E-4F8E-89AF-C3E125A47F76}
+	EndGlobalSection
+EndGlobal
