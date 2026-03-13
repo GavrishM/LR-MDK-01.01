@@ -36,15 +36,23 @@ namespace LR3
             InitializeComponent();
             string path = Path.Combine(Application.StartupPath, "Image", "Ambroxol.jpg");
             List <Medicine> inputList = new List<Medicine>();
-            inputList.Add(new Medicine("Амброксол", "\\Image\\Ambroxol.jpg", 47, "ООО Амброксол", "ООО Амброксол", "15 недель", "Лекарство от кашля (таблетки)"));
-            inputList.Add(new Medicine("Коделак", "\\Image\\Коделак.jpg", 32, "ООО Коделак", "ООО Коделак", "4 недели", "Лекарство от кашля (сироп)"));
+            inputList.Add(new Medicine("Амброксол", Path.Combine(Application.StartupPath, "Image", "Ambroxol.jpg"),
+                                                  47, "ООО Амброксол", "ООО Амброксол",
+                                                  "15 недель", "Лекарство от кашля (таблетки)"));
+            inputList.Add(new Medicine("Коделак", Path.Combine(Application.StartupPath, "Image", "Kodelak.jpg"),
+                                                32, "ООО Коделак", "ООО Коделак",
+                                                "4 недели", "Лекарство от кашля (сироп)"));
             medicineGroupList.Add("Лекарства от кашля", inputList);
             List<Medicine> inputList2 = new List<Medicine>();
-            inputList2.Add(new Medicine("Терафлю", "\\Image\\Терафлю.jpg", 68, "ООО Терафлю", "ООО Терафлю", "2 недели", "Жаропонижающее (пакетики)"));
-            inputList2.Add(new Medicine("Nurofen", "\\Image\\Nurofen.jpg", 89, "ООО Nurofen", "ООО Nurofen", "15 недель", "Жаропонижающее (таблетки)"));
+            inputList2.Add(new Medicine("Терафлю", Path.Combine(Application.StartupPath, "Image", "Teraflu.jpg"),
+                                                 68, "ООО Терафлю", "ООО Терафлю",
+                                                 "2 недели", "Жаропонижающее (пакетики)"));
+            inputList2.Add(new Medicine("Nurofen", Path.Combine(Application.StartupPath, "Image", "Nurofen.jpg"),
+                                                 89, "ООО Nurofen", "ООО Nurofen",
+                                                 "15 недель", "Жаропонижающее (таблетки)"));
             medicineGroupList.Add("Жаропонижающие", inputList2);
             GroupListBox.DataSource = medicineGroupList.Keys.ToList();
-          //MainPictureBox.Image = Image.FromFile(path); //Ошибка аут оф мемори
+          
         }
 
         private void GroupListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,6 +75,7 @@ namespace LR3
                 "Описание: " + med.Description;
 
             MedicineTextBox.Text = result;
+            MainPictureBox.ImageLocation = med.Image;
         }
         //
         private void OrderButton_Click(object sender, EventArgs e)

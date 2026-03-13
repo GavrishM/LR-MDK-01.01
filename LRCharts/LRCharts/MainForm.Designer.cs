@@ -30,13 +30,14 @@
         {
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
-            this.CartesianListBox = new System.Windows.Forms.ListBox();
             this.CartesianPanel = new System.Windows.Forms.Panel();
-            this.Pie = new LiveCharts.WinForms.PieChart();
+            this.cartesian = new LRCharts.Views.SalesCartesianChart();
+            this.ItemsList = new System.Windows.Forms.ListBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pie = new LRCharts.Views.SalesPieChart();
             this.TabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.CartesianPanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,9 +54,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.cartesianChart1);
             this.tabPage1.Controls.Add(this.CartesianPanel);
-            this.tabPage1.Controls.Add(this.CartesianListBox);
+            this.tabPage1.Controls.Add(this.ItemsList);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -64,9 +64,36 @@
             this.tabPage1.Text = "График";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // CartesianPanel
+            // 
+            this.CartesianPanel.Controls.Add(this.cartesian);
+            this.CartesianPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CartesianPanel.Location = new System.Drawing.Point(123, 3);
+            this.CartesianPanel.Name = "CartesianPanel";
+            this.CartesianPanel.Size = new System.Drawing.Size(666, 418);
+            this.CartesianPanel.TabIndex = 2;
+            // 
+            // cartesian
+            // 
+            this.cartesian.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cartesian.Location = new System.Drawing.Point(0, 0);
+            this.cartesian.Name = "cartesian";
+            this.cartesian.Size = new System.Drawing.Size(666, 418);
+            this.cartesian.TabIndex = 0;
+            // 
+            // ItemsList
+            // 
+            this.ItemsList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ItemsList.FormattingEnabled = true;
+            this.ItemsList.Location = new System.Drawing.Point(3, 3);
+            this.ItemsList.Name = "ItemsList";
+            this.ItemsList.Size = new System.Drawing.Size(120, 418);
+            this.ItemsList.TabIndex = 1;
+            this.ItemsList.SelectedIndexChanged += new System.EventHandler(this.ItemsList_SelectedIndexChanged);
+            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.Pie);
+            this.tabPage2.Controls.Add(this.pie);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -75,40 +102,13 @@
             this.tabPage2.Text = "Круговая диаграмма";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // cartesianChart1
+            // pie
             // 
-            this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cartesianChart1.Location = new System.Drawing.Point(123, 3);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(666, 418);
-            this.cartesianChart1.TabIndex = 0;
-            this.cartesianChart1.Text = "cartesianChart1";
-            // 
-            // CartesianListBox
-            // 
-            this.CartesianListBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.CartesianListBox.FormattingEnabled = true;
-            this.CartesianListBox.Location = new System.Drawing.Point(3, 3);
-            this.CartesianListBox.Name = "CartesianListBox";
-            this.CartesianListBox.Size = new System.Drawing.Size(120, 418);
-            this.CartesianListBox.TabIndex = 1;
-            // 
-            // CartesianPanel
-            // 
-            this.CartesianPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CartesianPanel.Location = new System.Drawing.Point(123, 3);
-            this.CartesianPanel.Name = "CartesianPanel";
-            this.CartesianPanel.Size = new System.Drawing.Size(666, 418);
-            this.CartesianPanel.TabIndex = 2;
-            // 
-            // Pie
-            // 
-            this.Pie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pie.Location = new System.Drawing.Point(3, 3);
-            this.Pie.Name = "Pie";
-            this.Pie.Size = new System.Drawing.Size(786, 418);
-            this.Pie.TabIndex = 0;
-            this.Pie.Text = "pieChart1";
+            this.pie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pie.Location = new System.Drawing.Point(3, 3);
+            this.pie.Name = "pie";
+            this.pie.Size = new System.Drawing.Size(786, 418);
+            this.pie.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -120,6 +120,7 @@
             this.Text = "Напитки";
             this.TabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.CartesianPanel.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -130,10 +131,11 @@
         private System.Windows.Forms.TabControl TabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
-        private System.Windows.Forms.ListBox CartesianListBox;
+        //private LRCharts.Views.SalesCartesianChart cartesian;
+        private System.Windows.Forms.ListBox ItemsList;
         private System.Windows.Forms.Panel CartesianPanel;
-        private LiveCharts.WinForms.PieChart Pie;
+        private LRCharts.Views.SalesPieChart pie;
+        private Views.SalesCartesianChart cartesian;
     }
 }
 

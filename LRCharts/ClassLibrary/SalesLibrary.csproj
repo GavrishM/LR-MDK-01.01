@@ -55,16 +55,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Drink.cs" />
-    <Compile Include="Model\Sale.cs" />
+    <Compile Include="Analysis\ProfitAnalyzer.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Models\Init.cs" />
+    <Compile Include="Models\SalesModel.cs" />
+    <Compile Include="Presenter\SalesPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sale.cs" />
+    <Compile Include="Views\ISalesView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenter\" />
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
