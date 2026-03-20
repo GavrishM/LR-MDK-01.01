@@ -8,13 +8,13 @@ namespace LR3
 {
     public class Medicine
     {
-        private string Name { get; set; }
-        private string Image {  get; set; }
-        private double Cost { get; set; }
-        private string Manufacturer { get; set; }
-        private string Supplier { get; set; }
-        private string ExpirationDate { get; set; }
-        private string Description { get; set; }
+        public string Name { get; set; }
+        public string Image {  get; set; }
+        public double Cost { get; set; }
+        public string Manufacturer { get; set; }
+        public string Supplier { get; set; }
+        public string ExpirationDate { get; set; }
+        public string Description { get; set; }
 
         public Medicine (string name, string image, double cost, string manufacturer, string supplier, string expirationDate, string description)
         {
