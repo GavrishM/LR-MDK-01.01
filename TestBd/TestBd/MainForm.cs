@@ -14,12 +14,14 @@ namespace TestBd
     //Добавить кнопки "добавить и удалить пользователя"
     public partial class MainForm: Form
     {
+        List<User> users = new List<User>();
         PgUsersLoader loader = new PgUsersLoader();
         public MainForm()
         {
             InitializeComponent();
-            usersDataGridView.DataSource = loader.LoadUsers();
-
+            users.AddRange(loader.LoadUsers());
+            usersDataGridView.DataSource = users;
+            
             //var cs = "Host=192.168.1.48;Username=postgres;Password=PG@dmin$;Database=proptest";
             //var con = new NpgsqlConnection(cs);
 
@@ -35,6 +37,39 @@ namespace TestBd
             //}
             //MessageBox.Show(string.Join(",", PgUsersLoader.LoadUse));
             //con.Close();
+        }
+
+        private void DeleteUserButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                {
+                    //
+                    //cmd.Parameters.AddWithValue("@id", 1);
+                    //
+                    //await cmd.ExecuteNonQuery();
+                }
+                List<User> selectedUser = new List<User>();
+                //selectedUser.AddRange(usersDataGridView.SelectedRows);
+                users = loader.RemoveUser(selectedUser, users);
+                usersDataGridView.DataSource = users;
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+            
+
+        }
+
+        private void AddUserButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditUserButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
