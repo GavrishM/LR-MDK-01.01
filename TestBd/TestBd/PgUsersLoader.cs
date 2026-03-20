@@ -13,11 +13,11 @@ namespace TestBd
         public List<User> LoadUsers()
         {
             List<User> allUsers = new List<User>();
-            var cs = "Host=192.168.1.48;Username=postgres;Password=PG@dmin$;Database=proptest";
+            var cs = "Host=192.168.1.48;Username=postgres;Password=PG@dmin$;Database=test01";
             var con = new NpgsqlConnection(cs);
 
             con.Open();
-            var sql = "SELECT login,password,name,last_name,age FROM myusers";
+            var sql = "SELECT login,password,name,last_name,age FROM users";
             var cmd = new NpgsqlCommand(sql, con);
             var reader = cmd.ExecuteReader();
             while (reader.Read())

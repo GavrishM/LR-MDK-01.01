@@ -11,6 +11,7 @@ using Npgsql;
 
 namespace TestBd
 {
+    //Добавить кнопки "добавить и удалить пользователя"
     public partial class MainForm: Form
     {
         PgUsersLoader loader = new PgUsersLoader();
