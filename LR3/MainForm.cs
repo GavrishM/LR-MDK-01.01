@@ -33,7 +33,7 @@ namespace LR3
          */
         /*
          Загрузка с файла
-         Докум с описание тест кейсов, разработка авто тестов, отчет 
+         Докум с описание тест кейсов, разработка авто тестов, отчет .
          */
         Dictionary<string, List<Medicine>> medicineGroupList = new Dictionary<string, List<Medicine>>();
         public MainForm()
