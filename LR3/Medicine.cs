@@ -10,11 +10,11 @@ namespace LR3
     {
         private string Name { get; set; }
         private string Image {  get; set; }
-        private double Cost;
-        private string Manufacturer;
-        private string Supplier;
-        private string ExpirationDate;
-        private string Description;
+        private double Cost { get; set; }
+        private string Manufacturer { get; set; }
+        private string Supplier { get; set; }
+        private string ExpirationDate { get; set; }
+        private string Description { get; set; }
 
         public Medicine (string name, string image, double cost, string manufacturer, string supplier, string expirationDate, string description)
         {
