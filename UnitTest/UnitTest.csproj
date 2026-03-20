@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{30a6d08e-01ed-4fee-890a-f5840c23f031}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LR3\LR3.csproj">
       <Project>{00f268e3-6961-4d56-baab-953d28018407}</Project>
       <Name>LR3</Name>

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary;
 
 namespace LR3
 {
@@ -30,11 +31,16 @@ namespace LR3
         По нажатию на кнопку «Заказать» формируется вывод текста на форму с перечнем номенклатурных групп и
         количеством заказываемых препаратов для каждой группы.
          */
+        /*
+         Загрузка с файла
+         Докум с описание тест кейсов, разработка авто тестов, отчет 
+         */
         Dictionary<string, List<Medicine>> medicineGroupList = new Dictionary<string, List<Medicine>>();
         public MainForm()
         {
             InitializeComponent();
-            string path = Path.Combine(Application.StartupPath, "Image", "Ambroxol.jpg");
+
+            string path = Path.Combine(Application.StartupPath, "Image", "../../Images/Ambroxol.jpg");
             List <Medicine> inputList = new List<Medicine>();
             inputList.Add(new Medicine("Амброксол", Path.Combine(Application.StartupPath, "Image", "Ambroxol.jpg"),
                                                   47, "ООО Амброксол", "ООО Амброксол",
@@ -67,12 +73,12 @@ namespace LR3
             List<Medicine> medicines = medicineGroupList[GroupListBox.SelectedItem.ToString()].ToList();
             Medicine med = medicines[MedicineComboBox.SelectedIndex];
 
-            string result = "Название: " + med.Name + "\n" +
-                "Цена: " + med.Cost + "\n" +
-                "Производитель: " + med.Manufacturer + "\n" +
-                "Поставщик: " + med.Supplier + "\n" +
-                "Срок годности: " + med.ExpirationDate + "\n" +
-                "Описание: " + med.Description;
+            string result = "Название: " + med.Name + " \n" +
+            /*            */"Цена: " + med.Cost + " \n" +
+            /*            */"Производитель: " + med.Manufacturer + " \n" +
+            /*            */"Поставщик: " + med.Supplier + " \n" +
+            /*            */"Срок годности: " + med.ExpirationDate + " \n" +
+            /*            */"Описание: " + med.Description;
 
             MedicineTextBox.Text = result;
             MainPictureBox.ImageLocation = med.Image;

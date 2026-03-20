@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LR3
+namespace ClassLibrary
 {
     public class Medicine
     {
         public string Name { get; set; }
-        public string Image {  get; set; }
+        public string Image { get; set; }
         public double Cost { get; set; }
         public string Manufacturer { get; set; }
         public string Supplier { get; set; }
         public string ExpirationDate { get; set; }
         public string Description { get; set; }
 
-        public Medicine (string name, string image, double cost, string manufacturer, string supplier, string expirationDate, string description)
+        public Medicine(string name, string image, double cost, string manufacturer, string supplier, string expirationDate, string description)
         {
             Name = name;
             Image = image;
@@ -26,7 +26,5 @@ namespace LR3
             ExpirationDate = expirationDate;
             Description = description;
         }
-        
-
     }
 }
