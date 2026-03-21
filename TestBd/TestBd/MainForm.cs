@@ -11,36 +11,23 @@ using Npgsql;
 
 namespace TestBd
 {
-    //Добавить кнопки "добавить и удалить пользователя"
+    //Добавить кнопки "добавить и удалить пользователя" и кнопку (очистки всей таблицы?)
     public partial class MainForm: Form
     {
-        List<User> users = new List<User>();
+       
         PgUsersLoader loader = new PgUsersLoader();
         public MainForm()
         {
             InitializeComponent();
-            users.AddRange(loader.LoadUsers());
-            usersDataGridView.DataSource = users;
-            
-            //var cs = "Host=192.168.1.48;Username=postgres;Password=PG@dmin$;Database=proptest";
-            //var con = new NpgsqlConnection(cs);
+            //users.AddRange(loader.LoadUsers());
+            usersDataGridView.DataSource = loader.LoadUsers();
 
-            //con.Open();
-            //var sql = "SELECT password,login FROM myusers";
-            //var cmd = new NpgsqlCommand(sql, con);
-
-            //var reader = cmd.ExecuteReader();
-            //List<string> Logins = new List<string>();
-            //while (reader.Read())
-            //{
-            //    Logins.Add(reader.GetString(0) + ":" + reader.GetString(1));
-            //}
-            //MessageBox.Show(string.Join(",", PgUsersLoader.LoadUse));
-            //con.Close();
         }
 
         private void DeleteUserButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Вы точно хотите удалить этого пользователя?", "Удаление", MessageBoxButtons.YesNo);
+
             try
             {
                 {
@@ -49,10 +36,12 @@ namespace TestBd
                     //
                     //await cmd.ExecuteNonQuery();
                 }
-                List<User> selectedUser = new List<User>();
-                //selectedUser.AddRange(usersDataGridView.SelectedRows);
-                users = loader.RemoveUser(selectedUser, users);
-                usersDataGridView.DataSource = users;
+                
+                BindingList<User> selectedUser = new BindingList<User>();
+                foreach (User user in usersDataGridView.SelectedRows)
+                {selectedUser.Add(user);}
+                loader.RemoveUser(selectedUser);
+                //usersDataGridView.DataSource = loader.LoadUsers();
             }
             catch (NpgsqlException ex)
             {
@@ -64,12 +53,38 @@ namespace TestBd
 
         private void AddUserButton_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                ShowDialog(/*AddUserForm*/);
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private void EditUserButton_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }

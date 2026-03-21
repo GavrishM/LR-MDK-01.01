@@ -16,7 +16,7 @@ namespace TestBd
         [DisplayName("Пароль")]
         public string Password { get; set; }
         [DisplayName("Фамилия")]
-        public string Last_name { get; set; }
+        public string LastName { get; set; }
         [DisplayName("Возраст")]
         public int Age { get; set; }
     }
