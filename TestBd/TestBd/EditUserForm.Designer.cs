@@ -161,7 +161,7 @@
             this.Controls.Add(this.ELoginLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditUserForm";
-            this.Text = "EAddUserForm";
+            this.Text = "Редактировать пользователя";
             this.ResumeLayout(false);
             this.PerformLayout();
 

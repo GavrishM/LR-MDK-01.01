@@ -161,7 +161,7 @@
             this.Controls.Add(this.LoginLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddUserForm";
-            this.Text = "AddUserForm";
+            this.Text = "Добавить пользователя";
             this.ResumeLayout(false);
             this.PerformLayout();
 
