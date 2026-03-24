@@ -14,60 +14,41 @@ namespace TestBd
     //Добавить кнопки "добавить и удалить пользователя" и кнопку (очистки всей таблицы?)
     public partial class MainForm: Form
     {
-       
+        AddUserForm AddForm = new AddUserForm();
+        EditUserForm EditForm = new EditUserForm();
         PgUsersLoader loader = new PgUsersLoader();
         public MainForm()
         {
             InitializeComponent();
             //users.AddRange(loader.LoadUsers());
             usersDataGridView.DataSource = loader.LoadUsers();
+            
 
         }
 
         private void DeleteUserButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Вы точно хотите удалить этого пользователя?", "Удаление", MessageBoxButtons.YesNo);
-
-            try
-            {
-                {
-                    //
-                    //cmd.Parameters.AddWithValue("@id", 1);
-                    //
-                    //await cmd.ExecuteNonQuery();
-                }
-                
-                BindingList<User> selectedUser = new BindingList<User>();
-                foreach (User user in usersDataGridView.SelectedRows)
-                {selectedUser.Add(user);}
-                loader.RemoveUser(selectedUser);
-                //usersDataGridView.DataSource = loader.LoadUsers();
-            }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-            
-
+            DataGridViewRow rows = usersDataGridView.SelectedRows[0];
+            User user = rows.DataBoundItem as User;
+            loader.DeleteUser(user.Login);
+            usersDataGridView.Refresh();
         }
 
         private void AddUserButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ShowDialog(/*AddUserForm*/);
-            }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
+            AddForm.Show();
+            
         }
 
         private void EditUserButton_Click(object sender, EventArgs e)
         {
             try
             {
-
+                DataGridViewRow rows = usersDataGridView.SelectedRows[0];
+                User user = rows.DataBoundItem as User;
+                EditForm.SpiUzer(user);
+                EditForm.Show();
+                
             }
             catch (NpgsqlException ex)
             {
@@ -79,7 +60,12 @@ namespace TestBd
         {
             try 
             {
-
+                DataGridViewRow rows = usersDataGridView.SelectedRows[0];
+                foreach (DataGridViewRow row in usersDataGridView.Rows)
+                {
+                    User user = row.DataBoundItem as User;
+                    loader.DeleteUser(user.Login);
+                }
             }
             catch (NpgsqlException ex)
             {
