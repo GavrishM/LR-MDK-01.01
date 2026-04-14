@@ -5,11 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace PR_DB_V12
 {
     public class PgMealsLoader
     {
+        
         public string cs = "Host=192.168.1.48;Username=postgres;Password=PG@dmin$;Database=GavrishM PRBD V12";
         public BindingList<Meal> allMeals = new BindingList<Meal>();
         public BindingList<Meal> LoadMeals()
@@ -28,8 +30,8 @@ namespace PR_DB_V12
                     {
                         Name = reader.GetString(0),
                         Type = reader.GetString(1),
-                        Name = reader.GetString(2),
-                        Delivery = reader.GetString(3)                        
+                        Price = Convert.ToInt32(reader.GetString(2)),
+                        Delivery = Convert.ToBoolean(reader.GetString(3))                        
                     });
                 }
                 con.Close();
