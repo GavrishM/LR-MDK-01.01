@@ -17,6 +17,7 @@ namespace PR_DB_V12
         public int Price { get; set; }
         [DisplayName("Доставка")]
         public bool Delivery { get; set; }
+
         public Meal(string name, string type, int price, bool delivery)
         {
             Name = name;
@@ -24,7 +25,6 @@ namespace PR_DB_V12
             Price = price;
             Delivery = delivery;
         }
-
         public Meal() { }
     }
 }

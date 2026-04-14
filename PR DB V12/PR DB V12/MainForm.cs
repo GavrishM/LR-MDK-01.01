@@ -19,11 +19,11 @@ namespace PR_DB_V12
         {
 
             InitializeComponent();
-            mealsDataGridView.DataSourse = loader.LoadMeals();
+            mealsDataGridView.DataSource = loader.LoadMeals();
         }
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            DataGridViewRow rows = usersDataGridView.SelectedRows[0];
+            DataGridViewRow rows = mealsDataGridView.SelectedRows[0];
             Meal meal = rows.DataBoundItem as Meal;
             loader.DeleteMeal(meal.Name);
             mealsDataGridView.Refresh();
@@ -34,14 +34,14 @@ namespace PR_DB_V12
             create.Show();
         }
 
-        private void EditUserButton_Click(object sender, EventArgs e)
+        private void EditButton_Click(object sender, EventArgs e)
         {
             try
             {
                 DataGridViewRow rows = mealsDataGridView.SelectedRows[0];
                 Meal meal = rows.DataBoundItem as Meal;
-                EditForm.SpiUzer(meal);
-                EditForm.Show();
+                edit.SpiMeal(meal);
+                edit.Show();
 
             }
             catch (NpgsqlException ex)
