@@ -21,7 +21,7 @@ namespace PR_DB_V12
                 var con = new NpgsqlConnection(cs);
 
                 con.Open();
-                var sql = "SELECT Name, Type, Price, Delivery FROM Meals";
+                var sql = "SELECT " + '"' + "Name" + '"' + ", " + '"' + "Type" + '"' + ", " + '"' + "Price" + '"' + ", " + '"' + "Delivery" + '"' + " FROM " + '"' + "Meals" + '"';
                 var cmd = new NpgsqlCommand(sql, con);
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -30,8 +30,8 @@ namespace PR_DB_V12
                     {
                         Name = reader.GetString(0),
                         Type = reader.GetString(1),
-                        Price = Convert.ToInt32(reader.GetString(2)),
-                        Delivery = Convert.ToBoolean(reader.GetString(3))                        
+                        Price = reader.GetInt32(2),
+                        Delivery = reader.GetBoolean(3)                        
                     });
                 }
                 con.Close();
@@ -50,7 +50,7 @@ namespace PR_DB_V12
             {
                 var con = new NpgsqlConnection(cs);
                 con.Open();
-                var sql = @"DELETE FROM Meals WHERE Name = @name";
+                var sql = @"DELETE FROM " + '"' + "Meals" + '"' + " WHERE " + '"' + "Name" + '"' + " = @name";
                 var cmd = new NpgsqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@name", name);
                 int changedRows = cmd.ExecuteNonQuery();
@@ -74,7 +74,7 @@ namespace PR_DB_V12
             {
                 var con = new NpgsqlConnection(cs);
                 con.Open();
-                var sql = @"INSERT INTO Meals(Name, Type, Price, Delivery) VALUES (@name, @type, @name, @delivery)";
+                var sql = @"INSERT INTO " + '"' + "Meals" + '"' + "(" + '"' + "Name" + '"' + ", " + '"' + "Type" + '"' + ", " + '"' + "Price" + '"' + ", " + '"' + "Delivery" + '"' + ") VALUES (@name, @type, @price, @delivery)";
                 var cmd = new NpgsqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@name", meal.Name);
                 cmd.Parameters.AddWithValue("@type", meal.Type);
