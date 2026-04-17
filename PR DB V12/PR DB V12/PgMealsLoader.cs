@@ -21,7 +21,8 @@ namespace PR_DB_V12
                 var con = new NpgsqlConnection(cs);
 
                 con.Open();
-                var sql = "SELECT " + '"' + "Name" + '"' + ", " + '"' + "Type" + '"' + ", " + '"' + "Price" + '"' + ", " + '"' + "Delivery" + '"' + " FROM " + '"' + "Meals" + '"';
+                //var sql = "SELECT " + '"' + "Name" + '"' + ", " + '"' + "Type" + '"' + ", " + '"' + "Price" + '"' + ", " + '"' + "Delivery" + '"' + " FROM " + '"' + "Meals" + '"';
+                var sql = "SELECT Name, Type, Price, Delivery FROM Meals";
                 var cmd = new NpgsqlCommand(sql, con);
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -44,13 +45,15 @@ namespace PR_DB_V12
             }
             return allMeals;
         }
+        
         public bool DeleteMeal(string name)
         {
             try
             {
                 var con = new NpgsqlConnection(cs);
                 con.Open();
-                var sql = @"DELETE FROM " + '"' + "Meals" + '"' + " WHERE " + '"' + "Name" + '"' + " = @name";
+                //var sql = @"DELETE FROM " + '"' + "Meals" + '"' + " WHERE " + '"' + "Name" + '"' + " = @name";
+                var sql = @"DELETE FROM Meals WHERE Name = @name";
                 var cmd = new NpgsqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@name", name);
                 int changedRows = cmd.ExecuteNonQuery();
@@ -74,7 +77,8 @@ namespace PR_DB_V12
             {
                 var con = new NpgsqlConnection(cs);
                 con.Open();
-                var sql = @"INSERT INTO " + '"' + "Meals" + '"' + "(" + '"' + "Name" + '"' + ", " + '"' + "Type" + '"' + ", " + '"' + "Price" + '"' + ", " + '"' + "Delivery" + '"' + ") VALUES (@name, @type, @price, @delivery)";
+                //var sql = @"INSERT INTO " + '"' + "Meals" + '"' + "(" + '"' + "Name" + '"' + ", " + '"' + "Type" + '"' + ", " + '"' + "Price" + '"' + ", " + '"' + "Delivery" + '"' + ") VALUES (@name, @type, @price, @delivery)";
+                var sql = @"INSERT INTO Meals (Name, Type, Price, Delivery) VALUES (@name, @type, @price, @delivery)";
                 var cmd = new NpgsqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@name", meal.Name);
                 cmd.Parameters.AddWithValue("@type", meal.Type);

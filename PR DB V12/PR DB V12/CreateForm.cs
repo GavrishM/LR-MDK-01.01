@@ -26,7 +26,7 @@ namespace PR_DB_V12
             meal.Price = Convert.ToInt32(PriceTextBox.Text);
             meal.Delivery = Convert.ToBoolean(DeliveryComboBox.Text);
             loader.AddMeal(meal);
-            //MainForm.mealsDataGridView.Refresh();
+            ActiveForm.Close();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

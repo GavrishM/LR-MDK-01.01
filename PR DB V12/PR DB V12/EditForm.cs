@@ -32,6 +32,7 @@ namespace PR_DB_V12
             meal.Price = Convert.ToInt32(EPriceTextBox.Text);
             meal.Delivery = Convert.ToBoolean(EDeliveryComboBox.Text);
             loader.AddMeal(meal);
+            ActiveForm.Close();
         }
 
         private void ECancelButton_Click(object sender, EventArgs e)
