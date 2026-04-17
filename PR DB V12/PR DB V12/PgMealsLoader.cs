@@ -45,7 +45,34 @@ namespace PR_DB_V12
             }
             return allMeals;
         }
-        
+        public bool UpdateMeal(Meal meal, string name)
+        {
+            try
+            {
+                var con = new NpgsqlConnection(cs);
+                con.Open();
+                //var sql = @"DELETE FROM " + '"' + "Meals" + '"' + " WHERE " + '"' + "Name" + '"' + " = @name";
+                var sql = @"UPDATE Meals SET Name = @name, Type = @type, Price = @price, Delivery = @delivery WHERE Name = @mname";
+                var cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@mname", name);
+                cmd.Parameters.AddWithValue("@name", meal.Name);
+                cmd.Parameters.AddWithValue("@type", meal.Type);
+                cmd.Parameters.AddWithValue("@price", meal.Price);
+                cmd.Parameters.AddWithValue("@delivery", meal.Delivery);
+                int changedRows = cmd.ExecuteNonQuery();
+
+                if (changedRows < 1)
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
         public bool DeleteMeal(string name)
         {
             try

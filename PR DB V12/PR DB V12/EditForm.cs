@@ -17,6 +17,17 @@ namespace PR_DB_V12
         public EditForm()
         {
             InitializeComponent();
+            ENameTextBox.Text = globalMeal.Name;
+            ETypeTextBox.Text = globalMeal.Type;
+            EPriceTextBox.Text = globalMeal.Price.ToString();
+            //if (globalMeal.Delivery == true)
+            //{
+            //    EDeliveryComboBox.SelectedIndex = 0;
+            //}
+            //else
+            //{
+            //    EDeliveryComboBox.SelectedIndex = 1;
+            //}
         }
         public void SpiMeal(Meal meal)
         {
@@ -25,13 +36,12 @@ namespace PR_DB_V12
 
         private void EAddButton_Click(object sender, EventArgs e)
         {
-            loader.DeleteMeal(globalMeal.Name);
             Meal meal = new Meal();
             meal.Name = ENameTextBox.Text;
             meal.Type = ETypeTextBox.Text;
             meal.Price = Convert.ToInt32(EPriceTextBox.Text);
             meal.Delivery = Convert.ToBoolean(EDeliveryComboBox.Text);
-            loader.AddMeal(meal);
+            loader.UpdateMeal(meal, globalMeal.Name);
             ActiveForm.Close();
         }
 
