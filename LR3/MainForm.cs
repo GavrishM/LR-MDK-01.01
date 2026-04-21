@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary;
+using Microsoft.VisualBasic;
 
 namespace LR3
 {
@@ -86,7 +87,9 @@ namespace LR3
         //
         private void OrderButton_Click(object sender, EventArgs e)
         {
-
+            string order = ((Interaction.InputBox("Сколько лекарства вы хотите заказать?", "Заказ")) + " " + MedicineComboBox.Text);
+            string result = (OrderTextBox.Text + order+"; ");
+            OrderTextBox.Text = result;
         }
     }
 }
