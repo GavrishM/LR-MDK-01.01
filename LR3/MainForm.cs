@@ -41,9 +41,10 @@ namespace LR3
         {
             InitializeComponent();
             {
-                string path = "";
+                string path = "../../../Import/Imp";
                 Import imp = new Import();
                 medicineGroupList = imp.ImportFromTxt(path);
+                GroupListBox.DataSource = medicineGroupList.Keys.ToList();
             }
             {
                 string path = Path.Combine(Application.StartupPath, "Image", "../../Images/Ambroxol.jpg");
@@ -78,24 +79,14 @@ namespace LR3
         {
             List<Medicine> medicines = medicineGroupList[GroupListBox.SelectedItem.ToString()].ToList();
             Medicine med = medicines[MedicineComboBox.SelectedIndex];
-            {
-                MedicineTextBox.Text = "Название: " + med.Name + ";";
-                MedicineTextBox.AppendText(Environment.NewLine + "Цена: " + med.Cost + ";");
-                MedicineTextBox.AppendText(Environment.NewLine + "Производитель: " + med.Manufacturer + ";");
-                MedicineTextBox.AppendText(Environment.NewLine + "Поставщик: " + med.Supplier + ";");
-                MedicineTextBox.AppendText(Environment.NewLine + "Срок годности: " + med.ExpirationDate + ";");
-                MedicineTextBox.AppendText(Environment.NewLine + "Описание: " + med.Description + ".");
-            }
-            {
-                //string result = "Название: " + med.Name + "; \n" +
-                ///*            */"Цена: " + med.Cost + "; \n" +
-                ///*            */"Производитель: " + med.Manufacturer + "; \n" +
-                ///*            */"Поставщик: " + med.Supplier + "; \n" +
-                ///*            */"Срок годности: " + med.ExpirationDate + "; \n" +
-                ///*            */"Описание: " + med.Description+".";
-                //MedicineTextBox.Text = result;
-            }
-            
+
+            MedicineTextBox.Text = "Название: " + med.Name + ";";
+            MedicineTextBox.AppendText(Environment.NewLine + "Цена: " + med.Cost + ";");
+            MedicineTextBox.AppendText(Environment.NewLine + "Производитель: " + med.Manufacturer + ";");
+            MedicineTextBox.AppendText(Environment.NewLine + "Поставщик: " + med.Supplier + ";");
+            MedicineTextBox.AppendText(Environment.NewLine + "Срок годности: " + med.ExpirationDate + ";");
+            MedicineTextBox.AppendText(Environment.NewLine + "Описание: " + med.Description + ".");
+
             MainPictureBox.ImageLocation = med.Image;
         }
         //jljljljljljljljljljljljljljljljljljljljljlj
