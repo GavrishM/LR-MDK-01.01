@@ -44,6 +44,7 @@
             this.mealsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mealsDataGridView.Location = new System.Drawing.Point(0, 25);
             this.mealsDataGridView.Name = "mealsDataGridView";
+            this.mealsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mealsDataGridView.Size = new System.Drawing.Size(800, 425);
             this.mealsDataGridView.TabIndex = 0;
             // 
