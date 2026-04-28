@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Import", "Import", "{0CDB2BEB-4EB8-4B6E-9142-1849E049513D}"
 	ProjectSection(SolutionItems) = preProject
 		Imp.txt = Imp.txt
+		TestImp.txt = TestImp.txt
 	EndProjectSection
 EndProject
 Global

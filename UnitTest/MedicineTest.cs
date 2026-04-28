@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using LR3;
 using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static System.Net.Mime.MediaTypeNames;
